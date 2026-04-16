@@ -83,7 +83,7 @@ Major thanks to all of these individuals from the bottom of my heart. They are a
 - Soulx:              Gave me five dollars and told me about spirolactone (fucking sick I love you)
 - Tamara Mochaccina:  Contributed vindicta scope fix and the fog fix.  
 
-# Cool People I've Met Because of This Project Who I Want to Thank for being themselves
+## Cool People I've Met Because of This Project Who I Want to Thank for being themselves
 - 6Daves
 - Anartoast
 - Boot
@@ -100,4 +100,3 @@ Major thanks to all of these individuals from the bottom of my heart. They are a
 - Piggy
 - Chatbaran
 - And you, thank you for using this and making my day <3. Please take care of yourselves.
- --------------------------------- END OF CONFIG OptimizationLock -- ver. 2 -------------------------------
