@@ -35,7 +35,8 @@ Convars {
 rate {
 ```
 
-
+# "THE MAP IS WEIRD AND DARK AFTER INSTALLING THE CONFIG"
+Lower your ingame shadow settings to medium or low
 # FAQ
 - "How do I find a value in the config"  
 Press ctrl+f in your text editor and type in the string you want.  
@@ -43,29 +44,29 @@ Press ctrl+f in your text editor and type in the string you want.
 Comment it out.  
 - "What does commenting mean"  
 to comment a line put ``//`` at the front of the line. It will make it not executed by the config.  
-- "Why are my characters dark in the portraits on the end screen and shop"
-``lb_enable_dynamic_lights`` set it to true
+- "Why are my characters dark in the portraits on the end screen and shop"  
+``lb_enable_dynamic_lights`` set it to ``true``
 - "Why are buildings popping in and out"  
-``r_farz`` and ``r_maxtapents`` comment them out.  
+``r_farz`` or ``r_mapextents`` comment them out.  
 - "How do I change my fov"  
-``citadel_camera_hero_fov`` Comment this out or lower the value.  
+``citadel_camera_hero_fov`` or ``r_aspectratio`` Comment this out or lower the value.  
 - "The config broke this patch"  
 the gameinfo.gi gets overwritten every major update. You need to manually replace it again.  
 - "I can't see boxes past a certain distance"  
-``r_size_cull_threshold "0.9"``  comment this out.  
-- "Can't see the Doorman ult indicator"  
-Set ``cl_ragdoll_limit`` to `` "-1"``  
+``r_size_cull_threshold "0.7"``
 - "I can't see trooper healthbars past a certain distance"  
-Comment out ``sc_fade_distance_scale_override``  
-- "There's holes in victor and paige at certain angles/sinners lights are little triangles"  
-Comment out ``sc_screen_size_lod_scale_override`` or increase the value.  
+change the values ``r_size_cull_threshold`` ``sc_fade_distance_scale_override``
+- "Can't see the Doorman ult indicator"  
+Set ``cl_ragdoll_limit`` to `` "-1"``
+- "There's holes in victor and paige at certain angles"  
+Comment out ``sc_screen_size_lod_scale_override`` or increase the value.
+- "Sinners lights are little triangles"  
+Comment out ``sc_screen_size_lod_scale_override`` or increase the value.
+- "I'm using boot's/kaiz's config and I can't see heros in shop or in the end screen"
+``citadel_portrait_world_renderer_off`` comment it out or set it to false
 
 # Mod Support
 Every variation of the config included in this repository has mod support added. For those who wish to remove or add it back in, remove ``Game                citadel/addons`` From the searchpaths bracket.
-
-# Credits
-Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
-
 
 # Credits 
   Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
