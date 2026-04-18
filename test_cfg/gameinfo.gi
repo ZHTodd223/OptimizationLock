@@ -565,8 +565,8 @@ citadel_crosshair_hit_marker_duration       "1"             // Removes the hitma
 // ^ This command seems to be broken as of current
 
 // --- 4. Lighting & Shadows ---
-lb_enable_stationary_lights                 "0"             // *Disables stationary lights (map looks flatter but more performant).         [def: "1"]
-lb_enable_dynamic_lights                    "0"             // *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
+lb_enable_stationary_lights                 "1"             // *Disables stationary lights (map looks flatter but more performant).         [def: "1"]
+lb_enable_dynamic_lights                    "1"             // *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
 lb_enable_baked_shadows                     "1"             // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
 
 // --- 5. Skybox Rendering ---

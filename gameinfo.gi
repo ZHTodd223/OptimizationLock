@@ -13,7 +13,7 @@
 //         /!#%|'-_- '\%k*|  
 //     o   |*@/        \_/      
 //         \)&|                  
-// OptimizationLock v2 by Sqooky with help from others <3
+// OptimizationLock v2.1 by Sqooky with help from others <3
 
 // As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more
 //- Sqooky:             I am the primary developer and maintainer of the project, but without everyone else here this project would not be maintained to this degree
@@ -499,7 +499,7 @@
 //      If you would like to donate as a means of showing thanks I have a kofi.     \\
 //      https://ko-fi.com/sqooky                                                    \\
 
-// ---------------- GAMEINFO CONFIG OptimizationLock -- ver. 2 --------------- \\
+// ---------------- GAMEINFO CONFIG Sqooky's.gi / OptimizationLock -- ver. 2.1 --------------- \\
             // Check here for updates: https://gamebanana.com/mods/656341 \\
            // Downloaded from: https://github.com/Sqooky/OptimizationLock  \\
           // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
@@ -535,8 +535,8 @@ citadel_unit_status_use_new                 "1"             // This uses new Hea
 
 // --- 4. Lighting & Shadows ---
 lb_enable_baked_shadows                     "1"             // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
-lb_enable_dynamic_lights                    "0"             // *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
-lb_enable_stationary_lights                 "0"             // *Disables stationary lights (map looks flatter but more performant).         [def: "1"]
+lb_enable_dynamic_lights                    "1"             // *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
+lb_enable_stationary_lights                 "1"             // *Disables stationary lights (map looks flatter but more performant).         [def: "1"]
 
 // --- 5. Skybox Rendering ---
 r_draw3dskybox                              "0"             //  Enables drawing the 3D skybox layer (distant geometry).         [def: "1"]
@@ -821,7 +821,7 @@ r_drawskybox                                "true"          // Can't be changed 
 //- PeachCebo
 //- Tamara Mochaccina
 //- And you, thank you for using this and making my day <3. Please take care of yourselves.
-// --------------------------------- END OF CONFIG OptimizationLock -- ver. 2 ------------------------------- \\
+// --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.1 ------------------------------- \\
         "rate"
         {
             "min"       "98304"
