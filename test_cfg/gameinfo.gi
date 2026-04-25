@@ -83,6 +83,7 @@
 
         SearchPaths
         {
+            //Game	            citadel/cvar_unlocker
             Game_Language       citadel_*LANGUAGE*
             Game                citadel/addons
             Mod                 citadel
@@ -400,8 +401,8 @@
     WorldRenderer
     {
         EnvironmentMaps                                 "1"             //                                                                                                      [def: "1"]
-        EnvironmentMapFaceSize                          "256"           //                                                                                                      [def: "256"]
-        EnvironmentMapRenderSize                        "1024"          // There does not seem to be any downside to messing with this value so it is currently in experimentation. [def: "1024"]
+        EnvironmentMapFaceSize                          "1024"          //                                                                                                      [def: "256"]
+        EnvironmentMapRenderSize                        "4096"          // There does not seem to be any downside to messing with this value so it is currently in experimentation. [def: "1024"]
         EnvironmentMapFormat                            "BC6H"          // These values don't seem to be able to be changed but this should change the texture format          [def: "BC6H"]
         EnvironmentMapPreviewFormat                     "BC6H"          // ^                                                                                                   [def: "BC6H"]
 
@@ -414,13 +415,16 @@
         BindlessSceneObjectDesc                         "CitadelBindlessDesc"
         GrassCastsShadows                               "0"
 
+        // Stolen from a 2015 gameinfo.gi
+        EnvironmentMapCacheSize                         "16"
+
         // These are stolen from CS2
         IrradianceVolumes                               "0"
-	EnvironmentMapBlurType                          "GGX"
-	LPVEdgeBlending	                                "0"             // Don't apply the edge fade distance to LPV bounds, we don't blend LPVs in CS2 shaders
+        EnvironmentMapBlurType                          "GGX"
+        LPVEdgeBlending	                                "0"             // Don't apply the edge fade distance to LPV bounds, we don't blend LPVs in CS2 shaders
 
 
-	//EnvironmentMapPreviewFormat                   "RGBA16161616F" // This is from CS2 where it is also commented out. I would imagine setting it enables HDR of some format considering this is the integer HDR format, but I do not have an HDR monitor to test
+        //EnvironmentMapPreviewFormat                   "RGBA16161616F" // This is from CS2 where it is also commented out. I would imagine setting it enables HDR of some format considering this is the integer HDR format, but I do not have an HDR monitor to test
 
     }
 
@@ -453,23 +457,27 @@
         FrameBufferCopyFormat                           "R11G11B10F"    // [def: "R11G11B10F"]
         Tonemapping                                     "0"             // [def: "0"]
 
-	GpuLightBinnerSupportViewModelCascade           "1"
-	CMTAtlasWidth                                   "512"
-	CMTAtlasHeight                                  "512"
-	CharacterDecals                                 "0"
-	HDRFrameBuffer                                  "0"
+        GpuLightBinnerSupportViewModelCascade           "1"
+        CMTAtlasWidth                                   "512"
+        CMTAtlasHeight                                  "512"
+        CharacterDecals                                 "0"
+        HDRFrameBuffer                                  "0"
 
         // Stolen from CS2
-	"GpuLightBinnerBinEnvMaps"                      "1"
-	"GpuLightBinnerBinLPVs"                         "1"
+        GpuLightBinnerBinEnvMaps                        "1"
+        GpuLightBinnerBinLPVs                           "1"
 
- 	"DynamicDecalsUseShrinkWrap"                    "1"	// enable shrinkwrap optimization for dynamic decal materials using F_FASTAPPROX
-	"LightCookieAllocGranularity"                   "1"
-	"LightCookieMinAllocSize"                       "0"
-	"DisableShadowFullSort"                         "1"
-        "SparseShadowTrees"                             "1"	// enable this to experiment with Sparse Shadow Trees as a drop in replacement for static geo shadow rendering into cascades
-        "PointLightShadowsEnabled"                      "1"
+        DynamicDecalsUseShrinkWrap                      "1" // enable shrinkwrap optimization for dynamic decal materials using F_FASTAPPROX
+        LightCookieAllocGranularity                     "1"
+        LightCookieMinAllocSize                         "0"
+        DisableShadowFullSort                           "1"
+        SparseShadowTrees                               "1" // enable this to experiment with Sparse Shadow Trees as a drop in replacement for static geo shadow rendering into cascades
+        PointLightShadowsEnabled                        "1"
 
+
+        // Ancient gameinfo.gi
+        NoSunLightManager                               "1"
+        VrLightBinner                                   "1"
 
         WellKnownLightCookies
         {
@@ -694,7 +702,7 @@ volume_fog_intermediate_textures_hdr        "false"         // See below        
 
 // ================ Network ================
 // Don't mess with network commands yet
-cl_async_usercmd_send                       "true"          // Makes the client send updates asyncronously I belive. Seems to smooth over network jank, although you will need to remove it from lower down in the gameinfo.gi [def: "false"]
+cl_async_usercmd_send                       "false"          // Makes the client send updates asyncronously I belive. Seems to smooth over network jank, although you will need to remove it from lower down in the gameinfo.gi [def: "false"]
 //cl_updaterate                             "128"           // Client snapshot update rate requested from the server (higher = more frequent updates).      [def: "128"]
 //cl_interp                                 "0.01"          // Client-side interpolation time (smoothing delay) for rendering other players/entities.       [def: 0]
 //cl_interp_ratio                           "1"             // Multiplier that affects interpolation time (often cl_interp_ratio / cl_updaterate).              [def: "0"]
@@ -813,6 +821,8 @@ csm_viewmodel_shadows                       "false"         // All of these comm
 //r_wait_on_present true
 
 // ================ Convars You Shouldn't/Can't Mess With But I Want to Maintain the Documentation ================
+
+//sc_aggregate_show_outside_vis                   true //this makes the entire map stop rendering
 //cl_particle_max_count                     "1500"          // Maximum allowed particles. Setting it too low will cause issues. [def: "0"]
 //cl_phys_enabled                           "false"         // You can disable physics and might see an improvement in framerate, however a lot will be buggy.   [def: "true"]
 gpu_level                                   "1"             // GPU level literally doesn't matter, gets set to 2 in the engine
@@ -842,6 +852,30 @@ r_citadel_npr_outlines                      "false"         // Enable outlines o
 //- Maihdenless:      Started the original OptimisationLock & its Discord.
 //- Soulx:            Gave me five dollars and told me about spirolactone (fucking sick I love you)
 // --------------------------------- END OF CONFIG OptimizationLock -- ver. 1.5.1 ------------------------------- \\
+
+
+//
+//panorama_worldpanel_update_culling              true
+r_citadel_distancefield_max_distance            16
+r_citadel_distancefield_min_screen_space_size   99
+r_citadel_gpu_culling                           true
+r_citadel_gpu_culling_shadows                   true
+r_citadel_gpu_culling_two_pass                  false
+sc_aggregate_gpu_culling_conservative_bounds    true
+sc_aggregate_gpu_culling_show_culled            true
+sc_aggregate_render_mesh_shader                 false
+sc_force_materials_batchable                    true
+sc_aggregate_debug_draw_meshlets                -1
+sc_aggregate_debug_draw_meshlets_bounds         true
+//sc_aggregate_show_outside_vis                   true //this makes the entire map stop rendering
+sc_allow_dithered_lod                           false
+sc_force_materials_batchable                    true
+cl_batch_entity_list_ops_during_latch           true
+phys_batch_ray_test                             16
+cl_aggregate_particles                          true
+sc_aggregate_gpu_culling_conservative_bounds    true
+
+
 
         "rate"
         {
@@ -912,7 +946,7 @@ r_citadel_npr_outlines                      "false"         // Enable outlines o
         "cl_async_usercmd_send_disabled_recvmargin_min" "0.5"   // Additional frame since we do not use the async usercmd send (potentially unneccessary)
         "cl_clock_buffer_ticks" "1"
         "cl_interp_ratio" "0"
-        "cl_async_usercmd_send" "true"
+        "cl_async_usercmd_send" "false"
 
         "fps_max_ui"    "120"
 
@@ -947,7 +981,7 @@ r_citadel_npr_outlines                      "false"         // Enable outlines o
         "cl_max_particle_pvs_aabb_edge_length" "100"
 
         // Allow aggregation of particles (for perf)
-        "cl_aggregate_particles" "false"
+        //"cl_aggregate_particles" "false"
 
         "citadel_enable_vdata_sound_preload" "true"
     }
@@ -961,3 +995,4 @@ r_citadel_npr_outlines                      "false"         // Enable outlines o
         "ShowLowAvailableVirtualMemoryMessageBox" "1"
     }
 }
+
