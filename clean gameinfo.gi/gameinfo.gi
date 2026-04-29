@@ -45,9 +45,9 @@
 		"turkish" "3"
 		"ukrainian" "3"
 	}
-
+	
 	FileSystem
-	{
+	{	
 		//
 		// The code that loads this file automatically does a few things here:
 		//
@@ -74,7 +74,7 @@
 			Game				core
 		}
 	}
-
+	
 	MaterialSystem2
 	{
 		RenderModes
@@ -182,7 +182,7 @@
 		"Engine"	"Source 2"
 		"ToolsDir"	"../sdktools"	// NOTE: Default Tools path. This is relative to the mod path.
 	}
-
+	
 	pulse
 	{
 		"pulse_enabled"					"1"
@@ -246,7 +246,7 @@
 		// steps. Additionally this controls which builders are displayed in the hammer build dialog.
 		DefaultMapBuilders
 		{
-			"bakedlighting"	"1"	// Enable lightmapping during compile time
+			"bakedlighting"	"1"	// Enable lightmapping during compile time		
 			"envmap"	"0" // turned off since it currently causes an assert and doesn't work due to some build issue
 			"nav"		"1"	// Generate nav mesh data
 		}
@@ -279,23 +279,23 @@
 		BakedLighting
 		{
 			Version 4
-			ImportanceVolumeTransitionRegion 512            // distance we transition from high to low resolution charts
+			ImportanceVolumeTransitionRegion 512            // distance we transition from high to low resolution charts 
 			LightmapChannels
 			{
 				direct_light_shadows 1
 				debug_chart_color 1
 				directional_irradiance_sh2_dc 1
-
+				
 				directional_irradiance_sh2_r
 				{
 					CompressedFormat DXT1
 				}
-
+				
 				directional_irradiance_sh2_g
 				{
 					CompressedFormat DXT1
 				}
-
+				
 				directional_irradiance_sh2_b
 				{
 					CompressedFormat DXT1
@@ -349,7 +349,7 @@
 			GameOutputPath	"resource/localization/citadel_vdata"
 			TokenPrefix		"Citadel_VData_"
 		}
-
+		
 		TextureCompiler
 		{
 			//Compressor              "lz4"
@@ -410,7 +410,7 @@
 		VolumetricFog 1
 		FrameBufferCopyFormat R11G11B10F
 		Tonemapping 0
-
+		
 		WellKnownLightCookies
 		{
 			"blank" "materials/effects/lightcookies/blank.vtex"
@@ -464,7 +464,7 @@
 	}
 
 	ConVars
-	{
+	{	 
 		"rate"
 		{
 			"min"		"98304"
@@ -500,7 +500,7 @@
 		"snd_steamaudio_invalid_path_length"	"0.0"
 		"cl_disconnect_soundevent"				"citadel.convar.stop_all_game_layer_soundevents"
 		"snd_event_browser_default_stack"		"citadel_default_3d"
-
+		
 		// voip
 		"voice_in_process"			            "1"
 
@@ -511,7 +511,7 @@
 		"snd_sos_max_event_base_depth" "10"
 		"sos_use_guid_filter" "1"
 
-		"voice_always_sample_mic"
+		"voice_always_sample_mic"               
 		{
 			"version"	"2"
 			"default"	"0"
@@ -527,7 +527,7 @@
 
 		// For perf reasons, since we don't use source-based DSP:
 		"disable_source_soundscape_trace"       "1"
-
+		
 		// Networking - Induced latency (pred offset)
 		"cl_tickpacket_recvmargin_desired" "5" 					// 5 ms base, min. floor for protecting against thrashing the queue
 		"cl_tickpacket_desired_queuelength" "0"					// 0 = attempt to always reach the queue's min floor
@@ -544,7 +544,7 @@
 		// Convars that control spatialization of UI audio.
 		"snd_ui_positional"								"1"
 		"snd_ui_spatialization_spread"					"2.4"
-
+		
 		// sound volume rate change limiting
 		"snd_envelope_rate"								"100.0"
 		"snd_soundmixer_update_maximum_frame_rate" 		"0"
@@ -568,11 +568,13 @@
 		"snd_event_browser_focus_events" "true"
 
 		"cl_max_particle_pvs_aabb_edge_length" "100"
-
+		
 		// Allow aggregation of particles (for perf)
 		"cl_aggregate_particles" "true"
-
+		
 		"citadel_enable_vdata_sound_preload" "true"
+		"r_add_views_in_pre_output"		"1"
+
 	}
 
 	Memory
@@ -584,3 +586,4 @@
 		"ShowLowAvailableVirtualMemoryMessageBox" "1"
 	}
 }
+
