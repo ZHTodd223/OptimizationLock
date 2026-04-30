@@ -992,12 +992,13 @@ sc_force_materials_batchable                    "true"
 
         "snd_event_browser_focus_events" "true"
 
-        "cl_max_particle_pvs_aabb_edge_length" "100"
+        "cl_max_particle_pvs_aabb_edge_length" "0"
 
         // Allow aggregation of particles (for perf)
-        //"cl_aggregate_particles" "false"
+        //"cl_aggregate_particles" "true"
 
-        "citadel_enable_vdata_sound_preload" "true"
+        "citadel_enable_vdata_sound_preload"    "true"
+        "r_add_views_in_pre_output"             "1"
     }
 
     Memory
@@ -1009,4 +1010,5 @@ sc_force_materials_batchable                    "true"
         "ShowLowAvailableVirtualMemoryMessageBox" "1"
     }
 }
+
 
