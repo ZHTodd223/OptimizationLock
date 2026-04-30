@@ -1,6 +1,10 @@
 To either request support or contribute findings to the project, our Discord Server can be found [here](https://discord.gg/EF3Jq57jQv).  
 If you would like to donate as a means of showing thanks I have a kofi [here](https://ko-fi.com/sqooky).
-https://github.com/Sqooky/OptimizationLock/blob/main/media/joy.png?raw=true
+
+
+<div>
+  <img src="https://github.com/Sqooky/OptimizationLock/blob/main/media/joy.png?raw=true" alt="A picture reading Sqooky's .gi A collage of performance configs with the intent of optimizing the game."/>
+</div>
 
 # Base Instructions
 To install the performance config replace the gameinfo.gi in ``steamapps/common/deadlock/game/citadel`` with the one downloaded from this repository.
