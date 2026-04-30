@@ -13,7 +13,7 @@
 //         /!#%|'-_- '\%k*|  
 //     o   |*@/        \_/      
 //         \)&|                  
-// OptimizationLock v2.2 by Sqooky with help from others <3
+// OptimizationLock v2.3 by Sqooky with help from others <3
 
 // As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more
 //- Sqooky:             I am the primary developer and maintainer of the project, but without everyone else here this project would not be maintained to this degree
@@ -31,49 +31,49 @@
 
 "GameInfo"
 {
-    game        "citadel"
-    title       "Citadel"
-    type        multiplayer_only
-    nomodels 1
-    nohimodel 1
-    nocrosshair 0
+    game                            "citadel"
+    title                           "Citadel"
+    type                            "multiplayer_only"
+    nomodels                        "1"
+    nohimodel                       "1"
+    nocrosshair                     "0"
     hidden_maps
     {
         "test_speakers"         1
         "test_hardware"         1
     }
-    nodegraph 0
-    perfwizard 0
-    tonemapping 0 
-    GameData    "citadel.fgd"
+    nodegraph                       "0"
+    perfwizard                      "0"
+    tonemapping                     "0"
+    GameData                        "citadel.fgd"
 
-    DisallowGameInfoConditionals 0
-    PGIVersion "6E09D3ED5A47F6A97443813F0E00F90BAA435918F82DF0C9B5DA46D27A33D903"
+    DisallowGameInfoConditionals    "0"
+    PGIVersion                      "6E09D3ED5A47F6A97443813F0E00F90BAA435918F82DF0C9B5DA46D27A33D903"
 
     Localize
     {
-        DuplicateTokensAssert   1
-        DisallowTokenContexts   1
+        DuplicateTokensAssert       "1"
+        DisallowTokenContexts       "1"
     }
 
     SupportedLanguages
     {
         "brazilian" "3"
-        "czech" "3"
-        "english" "3"
-        "french" "3"
-        "german" "3"
-        "italian" "3"
+        "czech"     "3"
+        "english"   "3"
+        "french"    "3"
+        "german"    "3"
+        "italian"   "3"
         "indonesian" "3"
-        "japanese" "3"
-        "koreana" "3"
-        "latam" "3"
-        "polish" "3"
-        "russian" "3"
-        "schinese" "3"
-        "spanish" "3"
-        "thai" "3"
-        "turkish" "3"
+        "japanese"  "3"
+        "koreana"   "3"
+        "latam"     "3"
+        "polish"    "3"
+        "russian"   "3"
+        "schinese"  "3"
+        "spanish"   "3"
+        "thai"      "3"
+        "turkish"   "3"
         "ukrainian" "3"
     }
 
@@ -548,13 +548,12 @@
 //      If you would like to donate as a means of showing thanks I have a kofi.     \\
 //      https://ko-fi.com/sqooky                                                    \\
 
-// ---------------- GAMEINFO CONFIG Sqooky's.gi / OptimizationLock -- ver. 2.2 --------------- \\
+// ---------------- GAMEINFO CONFIG Sqooky's.gi / OptimizationLock -- ver. 2.3 --------------- \\
             // Check here for updates: https://gamebanana.com/mods/656341 \\
            // Downloaded from: https://github.com/Sqooky/OptimizationLock  \\
           // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
 
 
-// Press ctrl+f and type * to highlight the more visually impactful commands that you could adjust
 // ================ Preferences ================
 
 // --- 1. Outlines ---
@@ -890,7 +889,7 @@ sc_force_materials_batchable                    "true"
 //- PeachCebo
 //- Tamara Mochaccina
 //- And you, thank you for using this and making my day <3. Please take care of yourselves.
-// --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.2 ------------------------------- \\
+// --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.3 ------------------------------- \\
         "rate"
         {
             "min"       "98304"
