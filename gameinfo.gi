@@ -13,7 +13,7 @@
 //         /!#%|'-_- '\%k*|  
 //     o   |*@/        \_/      
 //         \)&|                  
-// OptimizationLock v2.3 by Sqooky with help from others <3
+// OptimizationLock v2.3.1 by Sqooky with help from others <3
 
 // As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more
 //- Sqooky:             I am the primary developer and maintainer of the project, but without everyone else here this project would not be maintained to this degree
@@ -548,7 +548,7 @@
 //      If you would like to donate as a means of showing thanks I have a kofi.     \\
 //      https://ko-fi.com/sqooky                                                    \\
 
-// ---------------- GAMEINFO CONFIG Sqooky's.gi / OptimizationLock -- ver. 2.3 --------------- \\
+// ---------------- GAMEINFO CONFIG Sqooky's.gi / OptimizationLock -- ver. 2.3.1 --------------- \\
             // Check here for updates: https://gamebanana.com/mods/656341 \\
            // Downloaded from: https://github.com/Sqooky/OptimizationLock  \\
           // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
@@ -889,7 +889,7 @@ sc_force_materials_batchable                    "true"
 //- PeachCebo
 //- Tamara Mochaccina
 //- And you, thank you for using this and making my day <3. Please take care of yourselves.
-// --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.3 ------------------------------- \\
+// --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.3.1 ------------------------------- \\
         "rate"
         {
             "min"       "98304"
