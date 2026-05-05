@@ -939,7 +939,7 @@ r_texture_stream_throttle_count_over_budget "0"
 "sc_instanced_mesh_gpu_culling" "true"
 "sc_aggregate_gpu_culling" "true"
 //"sc_disable_procedural_layer_rendering" "true"
-"cl_skip_update_animations" "1"
+"cl_skip_update_animations" "0" // Puts neutrals in the ground
 
 //"r_skinning_enabled" "0" //turns everything into tpose
 "cl_phys_animated_hierarchy" "false"
