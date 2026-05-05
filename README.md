@@ -104,6 +104,13 @@ Every variation of the config included in this repository has mod support added.
 - Chatbaran
 - And you, thank you for using this and making my day <3. Please take care of yourselves.
 
+## Wonderful People Who Sourced Screenshots for me <33333
+- Abooo
+- Dirtkiller23/Aricole
+- Thai
+- Boot
+- Lina 🜏
+
 
 # Pretty Important Announcement
 In the patch from a while back there was a change to citadel_main_english.txt stating "Unable to enter matchmaking while any party member has changes to ConVars in Gameinfo.gi or is running Tools-Mode." At present moment it is not fully implemented.
