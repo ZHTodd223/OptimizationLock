@@ -157,26 +157,39 @@
         UseHardwareGammaRamp                   "0"         // Fullscreen gamma controlled in postprocessing
                 // End of stolen from CS2
 
-        IndexBufferPoolSizeMB                           "64"        // Not fully sure, in cs2 this is 64        [def: "32"]
-        UseReverseDepth                                 "1"         // Also not fully sure.                     [def: "1"]
-        Use32BitDepthBuffer                             "0"         //      [def: "0"]
-        Use32BitDepthBufferWithoutStencil               "1"         //      [def: "0"]
-        SwapChainSampleableDepth                        "1"         //      [def: "1"]
-        VulkanMutableSwapchain                          "1"         //      [def: "1"]
-        LowLatency                                      "1"         //      [def: "1"]
-        VulkanOnly_Linux                                "1"         //      [def: "1"]
-        VulkanRequireSubgroupWaveOpSupport              "1"         //      [def: "1"]
-        VulkanRequireDescriptorIndexing                 "1"         // Setting this command to zero causes my wayland compositor to crash upon launching the game. I would imagine don't fiddle with it      [def: "1"]
-        VulkanSteamShaderCache                          "1"         //      [def: "1"]
-        VulkanSteamAppShaderCache                       "1"         //      [def: "1"]
-        VulkanSteamDownloadedShaderCache                "1"         //      [def: "1"]
-        VulkanAdditionalShaderCache                     "vulkan_shader_cache.foz"
-        VulkanStagingPMBSizeLimitMB                     "384"       // Jasper (my beloved) said to not mess withthis
         GraphicsPipelineLibrary                         "1"         // This seemed to discard precompiled shaders when set to 0             [def: "1"]
-        VulkanOnlyTestProbability                       "0"         // Jasper said that "[when set to 1] this makes users have a 1% chance of using Vulkan" [def: "0"]
-        VulkanDefrag                                    "1"         //      [def: "1"]
+        IndexBufferPoolSizeMB                           "64"        // Not fully sure, in cs2 this is 64        [def: "32"]
+        LowLatency                                      "1"         //      [def: "1"]
         MinStreamingPoolSizeMB                          "512"       // In CS2 this is 500, not sure why      [def: "1024"]
         MinStreamingPoolSizeMBTools                     "2048"      //      [def: "2048"]
+        SwapChainSampleableDepth                        "1"         //      [def: "1"]
+        Use32BitDepthBuffer                             "0"         //      [def: "0"]
+        Use32BitDepthBufferWithoutStencil               "0"         //      [def: "0"]
+        UseReverseDepth                                 "1"         // Also not fully sure.                     [def: "1"]
+        VulkanAdditionalShaderCache                     "vulkan_shader_cache.foz"
+        VulkanDefrag                                    "1"         //      [def: "1"]
+        VulkanMutableSwapchain                          "1"         //      [def: "1"]
+        VulkanOnlyTestProbability                       "0"         // Jasper said that "[when set to 1] this makes users have a 1% chance of using Vulkan" [def: "0"]
+        VulkanOnly_Linux                                "1"         //      [def: "1"]
+        VulkanRequireDescriptorIndexing                 "1"         // Setting this command to zero causes my wayland compositor to crash upon launching the game. I would imagine don't fiddle with it      [def: "1"]
+        VulkanRequireSubgroupWaveOpSupport              "1"         //      [def: "1"]
+        VulkanStagingPMBSizeLimitMB                     "384"       // Jasper (my beloved) said to not mess withthis
+        VulkanSteamAppShaderCache                       "1"         //      [def: "1"]
+        VulkanSteamDownloadedShaderCache                "1"         //      [def: "1"]
+        VulkanSteamShaderCache                          "1"         //      [def: "1"]
+
+
+
+        MinDXLevel "80"
+        MaxPreloadTextureResolution "2"
+        VulkanRequestSM6            "true"
+        //VulkanUseExternalSubpassDependency "true"
+        //VulkanRequireFullGPURayTracing      "true"
+
+
+        AllowPartialMipChainImmediateTexLoads "true"
+
+
     }
 
     NVNGX
@@ -414,8 +427,8 @@
     WorldRenderer
     {
         EnvironmentMaps                                 "1"             //                                                                                                      [def: "1"]
-        EnvironmentMapFaceSize                          "1024"          //                                                                                                      [def: "256"]
-        EnvironmentMapRenderSize                        "4096"          // There does not seem to be any downside to messing with this value so it is currently in experimentation. [def: "1024"]
+        EnvironmentMapFaceSize                          "256"          //                                                                                                      [def: "256"]
+        EnvironmentMapRenderSize                        "1024"          // There does not seem to be any downside to messing with this value so it is currently in experimentation. [def: "1024"]
         EnvironmentMapFormat                            "BC6H"          // These values don't seem to be able to be changed but this should change the texture format          [def: "BC6H"]
         EnvironmentMapPreviewFormat                     "BC6H"          // ^                                                                                                   [def: "BC6H"]
 
@@ -436,45 +449,50 @@
         EnvironmentMapBlurType                          "GGX"
         LPVEdgeBlending                                 "0"             // Don't apply the edge fade distance to LPV bounds, we don't blend LPVs in CS2 shaders
 
-
         //EnvironmentMapPreviewFormat                   "RGBA16161616F" // This is from CS2 where it is also commented out. I would imagine setting it enables HDR of some format considering this is the integer HDR format, but I do not have an HDR monitor to test
 
+        very_fast "1"
     }
 
     SceneSystem
     {
 
-        GpuLightBinner                                  "1"             // [def: "1"]
-        FogCachedShadowAtlasWidth                       "0"             // [def: "2048"]
-        FogCachedShadowAtlasHeight                      "0"             // [def: "2048"]
-        FogCachedShadowTileSize                         "0"             // [def: "128"]
-        GpuLightBinnerSunLightFastPath                  "1"             // [def: "1"]
-        CSMCascadeResolution                            "0"             // [def: "2048"]
-        SunLightManagerCount                            "0"             // [def: "0"]
-        SunLightManagerCountTools                       "0"             // [def: "0"]
-        DefaultShadowTextureWidth                       "0"             // [def: "6144"]
-        DefaultShadowTextureHeight                      "0"             // [def: "6144"]
-        DynamicShadowResolution                         "1"             // [def: "1"]
 
-        TransformTextureRowCount                        "1024"          // [def: "1024"]
-        TransformTextureRowCountToolsMode               "6144"          // [def: "6144"]
-        SunLightMaxCascadeSize                          "4"             // [def: "4"]
-        SunLightShadowRenderMode                        "Depth"         // [def: "Depth"]
-        LayerBatchThresholdFullsort                     "512"           // [def: "20"]
-        NonTexturedGradientFog                          "0"             // [def: "1"]
+        HairShading                                     "false"
+        //MeshletBufferCPUSlotCount                       "0"
+        ParticleBufferSize                              "8"
+        RenderMeshlets                                  "0"
+
+
+        CMTAtlasHeight                                  "512"
+        CMTAtlasWidth                                   "512"
+        CSMCascadeResolution                            "0"             // [def: "2048"]
+        CharacterDecals                                 "0"
+        CubemapFog                                      "0"             // [def: "1"]
+        DefaultShadowTextureHeight                      "0"             // [def: "6144"]
+        DefaultShadowTextureWidth                       "0"             // [def: "6144"]
         // Temp till I can add support in citadel shaders
         DisableLateAllocatedTransformBuffer             "1"             // [def: "1"]
-        MinimumLateAllocatedVertexCacheBufferSizeMB     "64"            // [def: "64"]
-        CubemapFog                                      "0"             // [def: "1"]
-        VolumetricFog                                   "0"             // [def: "1"]
+        DynamicShadowResolution                         "1"             // [def: "1"]
+        FogCachedShadowAtlasHeight                      "0"             // [def: "2048"]
+        FogCachedShadowAtlasWidth                       "0"             // [def: "2048"]
+        FogCachedShadowTileSize                         "0"             // [def: "128"]
         FrameBufferCopyFormat                           "R11G11B10F"    // [def: "R11G11B10F"]
-        Tonemapping                                     "0"             // [def: "0"]
-
+        GpuLightBinner                                  "1"             // [def: "1"]
+        GpuLightBinnerSunLightFastPath                  "1"             // [def: "1"]
         GpuLightBinnerSupportViewModelCascade           "1"
-        CMTAtlasWidth                                   "512"
-        CMTAtlasHeight                                  "512"
-        CharacterDecals                                 "0"
         HDRFrameBuffer                                  "0"
+        LayerBatchThresholdFullsort                     "512"           // [def: "20"]
+        MinimumLateAllocatedVertexCacheBufferSizeMB     "64"            // [def: "64"]
+        NonTexturedGradientFog                          "0"             // [def: "1"]
+        SunLightManagerCount                            "0"             // [def: "0"]
+        SunLightManagerCountTools                       "0"             // [def: "0"]
+        SunLightMaxCascadeSize                          "4"             // [def: "4"]
+        SunLightShadowRenderMode                        "Depth"         // [def: "Depth"]
+        Tonemapping                                     "0"             // [def: "0"]
+        TransformTextureRowCount                        "1024"          // [def: "1024"]
+        TransformTextureRowCountToolsMode               "6144"          // [def: "6144"]
+        VolumetricFog                                   "0"             // [def: "1"]
 
         // Stolen from CS2
         GpuLightBinnerBinEnvMaps                        "1"
@@ -533,6 +551,7 @@
 
     Particles
     {
+        very_fast "1"
         "EnableParticleShaderFeatureBranching"  "1"
         "Float16HDRBackBuffer" "1"
         "PET_SupportFadingOpaqueModels" "1"
@@ -610,7 +629,7 @@ r_citadel_clip_sphere_min_opacity           "0"             // Removes the blur 
 // --- 9. Texture Quality ---
 r_texture_budget_threshold                  "0.7"           // Reduce texture memory pool size when this percentage of the budget is full. [def: "0.8"]
 r_texture_budget_update_period              "0.5"           // Time (in seconds) between updating texture memory budget.        [def: "0.1"]
-r_texture_stream_mip_bias                   "1"             // Worth adjusting, practically how good your textures will look.
+r_texture_stream_mip_bias                   "8"             // Worth adjusting, practically how good your textures will look.   [def: "1"]
 r_texturefilteringquality                   "3"             // Texture filtering, has very low fps impact. 0: Bilinear, 1: Trilinear, 2: Aniso 2x, 3: Aniso 4x, 4: Aniso 8x, 5: Aniso 16x
 
 // --- 10. Render Distance ---
@@ -890,21 +909,41 @@ sc_force_materials_batchable                    "true"
 //- Tamara Mochaccina
 //- And you, thank you for using this and making my day <3. Please take care of yourselves.
 // --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.3.1 ------------------------------- \\
+particle_cluster_use_collision_hulls false
+cl_fasttempentcollision 20
+cam_collision 0
+citadel_unit_status_allies_see_thru_walls false
+citadel_unit_status_allies_see_thru_walls_max_distance 30
+citadel_unit_status_dpi 6
+citadel_unit_status_delta_decay_rate 2
+citadel_camera_hard_trace_radius 32
+citadel_fibonnaci_sphere_trace_los_max 32
+citadel_num_matches_in_profile_history 128
+citadel_show_chat_wheel_angle_threshold 0
+citadel_mantle_probe_depth -1
+rtx_dynamic_blas    false
+rtx_dynamic_blas_caching false
+rtx_force_default_hitgroup true
+rtx_texture_resolution 64
+navlocal_parallel_trace_path_for_obstacle false
+mat_shading_complexity_max_register_count 8
+r_dashboard_render_quality true
+r_particle_model_new 0
+r_particle_model_new8 0
 
-
-hud_fastswitch 0
+r_particle_multiplier 0.3
+//hud_fastswitch 0
 //panorama_allow_texture_composition_layer_fast_path true
 //panorama_transition_time_factor     "0"
-steam_inputhandler_enabled          "0"
+//steam_inputhandler_enabled          "0"
 //panorama_disable_render_target_cache "true"
-r_skip_precache_validation_check true
-ai_debug_decisionmaking true
+//r_skip_precache_validation_check true
 //cl_skip_update_animations true
-multigpu_skip_semaphores true
-multigpu_skip_transfers true
+//multigpu_skip_semaphores true
+//multigpu_skip_transfers true
 //panorama_skip_composition_layer_content_paint true
 //panorama_skip_compo true
-thread_pool_option 1
+thread_pool_option -4
 // 1 gives "GlobalThreadPoolMode"		"efficiency"
 // 2 removes it from boot.vcfg
 // 3 gives "GlobalThreadPoolMode"		"undifferentiated"
@@ -912,6 +951,9 @@ thread_pool_option 1
 // 5 removes it from boot.vcfg
 // 6 gives "GlobalThreadPoolMode"		"max_threads"
 // 7-10 removes it from boot.vcfg
+
+// -1 Default
+// -2 removes it from boot.vcfg
         "rate"
         {
             "min"       "98304"
