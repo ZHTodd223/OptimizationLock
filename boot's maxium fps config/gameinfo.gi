@@ -242,28 +242,28 @@
 
     Hammer
     {
-        "fgd"                   "citadel.fgd"   // NOTE: This is relative to the 'game' path.
-        "GameFeatureSet"        "Citadel"
-        "DefaultSolidEntity"    "trigger_multiple"
-        "DefaultPointEntity"    "info_player_start"
-        "NavMarkupEntity"       "func_nav_markup"
-        "OverlayBoxSize"            "8"
-        "TileMeshesEnabled"         "1"
-        "RenderMode"                "ToolsVis"
         "CreateRenderClusters"      "1"
         "DefaultMinDrawVolumeSize"  "2048"
         "DefaultMinTrianglesPerCluster" "16384"
-        "TileGridSupportsBlendHeight"   "1"
-        "TileGridBlendDefaultColor" "0 255 0"
-        "LoadScriptEntities" "0"
-        "UsesBakedLighting" "1"
-        "UseAnalyticGrid" "0"
-        "SupportsDisplacementMapping" "0"
-        "SteamAudioEnabled"             "1"
+        "DefaultPointEntity"    "info_player_start"
+        "DefaultSolidEntity"    "trigger_multiple"
+        "GameFeatureSet"        "Citadel"
         "LatticeDeformerEnabled"        "1"
-        "ShadowAtlasWidth" "0"
+        "LoadScriptEntities" "0"
+        "NavMarkupEntity"       "func_nav_markup"
+        "OverlayBoxSize"            "8"
+        "RenderMode"                "ToolsVis"
         "ShadowAtlasHeight" "0"
+        "ShadowAtlasWidth" "0"
+        "SteamAudioEnabled"             "1"
+        "SupportsDisplacementMapping" "0"
+        "TileGridBlendDefaultColor" "0 255 0"
+        "TileGridSupportsBlendHeight"   "1"
+        "TileMeshesEnabled"         "1"
         "TimeSlicedShadowMapRendering" "0"
+        "UseAnalyticGrid" "0"
+        "UsesBakedLighting" "1"
+        "fgd"                   "citadel.fgd"   // NOTE: This is relative to the 'game' path.
     }
 
     SoundTool
@@ -438,41 +438,43 @@
 
     SceneSystem
     {
-        GpuLightBinner 1
-        FogCachedShadowAtlasWidth 0
-        FogCachedShadowAtlasHeight 0
-        FogCachedShadowTileSize 0
-        GpuLightBinnerSunLightFastPath 1
+        CMTAtlasHeight 256
+        CMTAtlasWidth 512
         CSMCascadeResolution 0
-        SunLightManagerCount 0
-        SunLightManagerCountTools 0
-        DefaultShadowTextureWidth 0
+        CharacterDecals 0
+        CubemapFog 0
         DefaultShadowTextureHeight 0
-        DynamicShadowResolution 0
-        TransformTextureRowCount    1024
-        TransformTextureRowCountToolsMode 6144
-        SunLightMaxCascadeSize      2
-        SunLightShadowRenderMode    Depth
-        LayerBatchThresholdFullsort 128
-        NonTexturedGradientFog      0
+        DefaultShadowTextureWidth 0
+
         // Temp till I can add support in citadel shaders
         DisableLateAllocatedTransformBuffer 1
-        MinimumLateAllocatedVertexCacheBufferSizeMB 64
-        CubemapFog 0
-        VolumetricFog 0
-        FrameBufferCopyFormat R11G11B10F
-        Tonemapping 0
-        CMTAtlasWidth 512
-        CMTAtlasHeight 256
-        CharacterDecals 0
-        HDRFrameBuffer 0
-        SupportsInstancedFade 1
-        GpuLightBinnerSupportViewModelCascade 1
-        ParticleBufferSize 256
-        ShadowmapMaxFilterRadius 0
+        DynamicShadowResolution 0
+        FogCachedShadowAtlasHeight 0
+        FogCachedShadowAtlasWidth 0
         FogCachedShadowTileMaxFilterRadius 0
+        FogCachedShadowTileSize 0
+        FrameBufferCopyFormat R11G11B10F
+        GpuLightBinner 1
+        GpuLightBinnerSunLightFastPath 1
+        GpuLightBinnerSupportViewModelCascade 1
+        HDRFrameBuffer 0
+        LayerBatchThresholdFullsort 128
+        MinimumLateAllocatedVertexCacheBufferSizeMB 64
+        NonTexturedGradientFog      0
+
+        ParticleBufferSize 256
         PointLightShadowsEnabled 0
         PunctualContactShadows 0
+        ShadowmapMaxFilterRadius 0
+        SunLightManagerCount 0
+        SunLightManagerCountTools 0
+        SunLightMaxCascadeSize      2
+        SunLightShadowRenderMode    Depth
+        SupportsInstancedFade 1
+        Tonemapping 0
+        TransformTextureRowCount    1024
+        TransformTextureRowCountToolsMode 6144
+        VolumetricFog 0
 
         WellKnownLightCookies
         {

@@ -148,6 +148,7 @@
         }
 
         SkipRedundantChangeCallbacks                    "1"
+        UseSerializedEntityPool                         "1"
     }
 
     RenderSystem
@@ -195,11 +196,15 @@
     NVNGX
     {
         AppID                                           "103371621"
+        //DLSSDefaultPreset     // These two values are in the code but I don't know what enabling them does, and I don't have an nvidia gpu to test, alas
+        //ReflexLateWarp
         SupportsDLSS                                    "1"
     }
 
     Engine2
     {
+        SinglePlayerAsyncRendering                      "1"         // In the dll, no idea what it does
+        AllowKeyChordBindings                           "1"         //this is for myself actually
         HasModAppSystems                                "1"
         Capable64Bit                                    "1"
         URLName citadel
@@ -207,27 +212,20 @@
         {
             SupportsMSAA                                "0"         //                                                      [def: "0"]
             DistanceField                               "1"         // Setting this to zero crashes the game on vulkan      [def: "1"]
-          //AmbientOcclusionProxies                     "0"         // I believe this is from pidjan, I am unsure of what it does [def: "?"]
+            AmbientOcclusionProxies                     "0"         // In the dll, no default value
         }
         PauseSinglePlayerOnGameOverlay                  "1"
         DefensiveConCommands "1"
         DisableLoadingPlaque "1"
     }
 
-    ContentBuilder
-    {
-        ResourceCompilerDirectXUsesWARP                 "0"
-    }
+
 
     SoundSystem
     {
         SteamAudioEnabled                               "1"
         WaveDataCacheSizeMB                             "256"
         UsePlatTime                                     "1"
-
-        // Stolen from CS2 again
-        Budget_StackSimulationUS                        "25"
-        Budget_FirstStackSimulationUS                   "50"
     }
     Sounds
     {
@@ -243,32 +241,37 @@
     pulse
     {
         "pulse_enabled"                                 "1"
+        strict_fgd_annotations                          "1"
+        client_blackboards                              "1"
     }
 
     Hammer
     {
-        "fgd"                                           "citadel.fgd"   // NOTE: This is relative to the 'game' path.
-        "GameFeatureSet"                                "Citadel"
-        "DefaultSolidEntity"                            "trigger_multiple"
-        "DefaultPointEntity"                            "info_player_start"
-        "NavMarkupEntity"                               "func_nav_markup"
-        "OverlayBoxSize"                                "8"
-        "TileMeshesEnabled"                             "1"
-        "RenderMode"                                    "ToolsVis"
         "CreateRenderClusters"                          "1"
         "DefaultMinDrawVolumeSize"                      "2048"
         "DefaultMinTrianglesPerCluster"                 "16384"
-        "TileGridSupportsBlendHeight"                   "1"
-        "TileGridBlendDefaultColor"                     "0 255 0"
-        "LoadScriptEntities"                            "0"
-        "UsesBakedLighting"                             "1"
-        "UseAnalyticGrid"                               "0"
-        "SupportsDisplacementMapping"                   "0"
-        "SteamAudioEnabled"                             "1"
+        "DefaultPointEntity"                            "info_player_start"
+        "DefaultSolidEntity"                            "trigger_multiple"
+        "GameFeatureSet"                                "Citadel"
         "LatticeDeformerEnabled"                        "1"
-        "ShadowAtlasWidth"                              "16384"
-        "ShadowAtlasHeight"                             "16384"
-        "TimeSlicedShadowMapRendering"                  "1"
+        "LoadScriptEntities"                            "0"
+        "NavMarkupEntity"                               "func_nav_markup"
+        "OverlayBoxSize"                                "8"
+        "RenderMode"                                    "ToolsVis"
+        "ShadowAtlasHeight"                             "0"
+        "ShadowAtlasWidth"                              "0"
+        "SteamAudioEnabled"                             "1"
+        "SupportsDisplacementMapping"                   "0"
+        "TileGridBlendDefaultColor"                     "0 255 0"
+        "TileGridSupportsBlendHeight"                   "1"
+        "TileMeshesEnabled"                             "1"
+        "TimeSlicedShadowMapRendering"                  "0"
+        "UseAnalyticGrid"                               "0"
+        "UsesBakedLighting"                             "1"
+        "fgd"                                           "citadel.fgd"   // NOTE: This is relative to the 'game' path.
+
+
+        Thread32First                                   "1"
     }
 
     SoundTool
@@ -311,7 +314,7 @@
         MeshCompiler
         {
             OptimizeForMeshlets                         "1"
-            TrianglesPerMeshlet                         "64"  // Maximum valid value currently is 126
+            TrianglesPerMeshlet                         "126"  // Maximum valid value currently is 126
             UseMikkTSpace                               "1"
             EncodeVertexBuffer                          "1"
             EncodeVertexBufferVersion                   "1"
@@ -445,13 +448,10 @@
         EnvironmentMapCacheSize                         "16"
 
         // These are stolen from CS2
-        IrradianceVolumes                               "0"
-        EnvironmentMapBlurType                          "GGX"
         LPVEdgeBlending                                 "0"             // Don't apply the edge fade distance to LPV bounds, we don't blend LPVs in CS2 shaders
 
         //EnvironmentMapPreviewFormat                   "RGBA16161616F" // This is from CS2 where it is also commented out. I would imagine setting it enables HDR of some format considering this is the integer HDR format, but I do not have an HDR monitor to test
 
-        very_fast "1"
     }
 
     SceneSystem
@@ -460,7 +460,7 @@
 
         HairShading                                     "false"
         //MeshletBufferCPUSlotCount                       "0"
-        ParticleBufferSize                              "8"
+        ParticleBufferSize                              "256"
         RenderMeshlets                                  "0"
 
 
@@ -482,13 +482,14 @@
         GpuLightBinnerSunLightFastPath                  "1"             // [def: "1"]
         GpuLightBinnerSupportViewModelCascade           "1"
         HDRFrameBuffer                                  "0"
-        LayerBatchThresholdFullsort                     "512"           // [def: "20"]
+        LayerBatchThresholdFullsort                     "80"           // [def: "20"]
         MinimumLateAllocatedVertexCacheBufferSizeMB     "64"            // [def: "64"]
         NonTexturedGradientFog                          "0"             // [def: "1"]
         SunLightManagerCount                            "0"             // [def: "0"]
         SunLightManagerCountTools                       "0"             // [def: "0"]
-        SunLightMaxCascadeSize                          "4"             // [def: "4"]
+        SunLightMaxCascadeSize                          "2"             // [def: "4"]
         SunLightShadowRenderMode                        "Depth"         // [def: "Depth"]
+        SupportsInstancedFade                           "1"
         Tonemapping                                     "0"             // [def: "0"]
         TransformTextureRowCount                        "1024"          // [def: "1024"]
         TransformTextureRowCountToolsMode               "6144"          // [def: "6144"]
@@ -555,9 +556,10 @@
         "Float16HDRBackBuffer" "1"
         "PET_SupportFadingOpaqueModels" "1"
         "Features" "non_homogenous_forward_layer_only"
+        ParticlesFoggedByDefault                "0"
+        PerVertexLighting                       "0"
+        GpuImplicitRendererManifest             "1"
 
-        //Stolen from CS2
-    "EnableMixedResolution" "1"
 
     }
 
@@ -848,6 +850,7 @@ csm_viewmodel_shadows                       "false"         // All of these comm
 //r_wait_on_present true
 
 // ================ Convars You Shouldn't/Can't Mess With But I Want to Maintain the Documentation ================ 
+//r_extra_render_frames                     "1"             // Setting this to anything above 0 causes issues with latency. negative values cause the game to crash. [def: "0"]
 //cl_particle_max_count                     "1500"          // Maximum allowed particles. Setting it too low will cause issues. With flooding from the console.  [def: "0"]
 //cl_phys_enabled                           "false"         // You can disable physics and might see an improvement in framerate, however a lot will be buggy.   [def: "true"]
 gpu_level                                   "1"             // GPU level literally doesn't matter, gets set to 2 in the engine
@@ -871,8 +874,6 @@ r_citadel_distancefield_min_screen_space_size   "99"
 r_citadel_gpu_culling                           "true"
 r_citadel_gpu_culling_shadows                   "true"
 r_citadel_gpu_culling_two_pass                  "true"
-sc_aggregate_debug_draw_meshlets                "-1"
-sc_aggregate_debug_draw_meshlets_bounds         "true"
 sc_aggregate_gpu_culling_conservative_bounds    "false"
 sc_aggregate_gpu_culling_show_culled            "true"
 sc_aggregate_render_mesh_shader                 "false"
@@ -960,7 +961,7 @@ r_particle_multiplier 0.3
 //multigpu_skip_transfers true
 //panorama_skip_composition_layer_content_paint true
 //panorama_skip_compo true
-thread_pool_option -4
+thread_pool_option 4
 // 1 gives "GlobalThreadPoolMode"		"efficiency"
 // 2 removes it from boot.vcfg
 // 3 gives "GlobalThreadPoolMode"		"undifferentiated"
@@ -1011,7 +1012,7 @@ thread_pool_option -4
         "voice_in_process"                      "1"
 
         // Sound debugging
-        "snd_report_audio_nan" "1"
+        //"snd_report_audio_nan" "1"
 
         // Audio system settings
         "snd_sos_max_event_base_depth" "10"
@@ -1072,7 +1073,7 @@ thread_pool_option -4
 
         "snd_event_browser_focus_events" "true"
 
-        "cl_max_particle_pvs_aabb_edge_length" "0"
+        "cl_max_particle_pvs_aabb_edge_length" "100"
 
         // Allow aggregation of particles (for perf)
         //"cl_aggregate_particles" "true"
