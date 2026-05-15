@@ -936,8 +936,8 @@ cl_fasttempentcollision 20
 cam_collision 0
 citadel_unit_status_allies_see_thru_walls false
 citadel_unit_status_allies_see_thru_walls_max_distance 30
-citadel_unit_status_dpi 6
-citadel_unit_status_delta_decay_rate 2
+//citadel_unit_status_dpi "6" // This increases the size of the health bar. Unfortunately I think this lowers performance. A shame.
+citadel_unit_status_delta_decay_rate 2 // how quickly the yellow to indicate damage fades from the health bar.
 citadel_camera_hard_trace_radius 32
 citadel_fibonnaci_sphere_trace_los_max 32
 citadel_show_chat_wheel_angle_threshold 0
