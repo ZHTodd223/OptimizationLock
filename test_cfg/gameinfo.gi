@@ -584,6 +584,7 @@ citadel_damage_offscreen_indicator_disabled "true"          // The little troope
 citadel_player_glow_disabled                "0"             // Disables player glow/highlight effect when pinged.               [def: "0"]
 citadel_trooper_glow_disabled               "1"             // 1 = Disable friendly/enemy minion glow.                          [def: "0"]
 citadel_unit_status_allies_see_thru_walls_max_distance "40" // How far to make allied players' unit status show through walls.  [def: "0"] (0 means no limit)
+//citadel_unit_status_dpi                   "6"             // This increases the size of the health bar. Unfortunately I think this lowers performance. A shame. [def: "5"]
 
 // --- 2. Field of View ---
 // These commands both affect fov but do so in different ways. citadel_camera_hero_fov changes the field of view using typical degrees but doesn't modify the punch zoom in. This means that if you have a high fov value the zoom in can be disorienting.
@@ -602,6 +603,7 @@ citadel_hideout_ball_show_juggle_count      "1"             // Shows a fun juggl
 citadel_hideout_ball_show_juggle_fx         "1"             // Shows juggle visual FX for hideout ball minigame.                [def: "0"]
 citadel_hud_objective_health_enabled        "2"             // 0=Off, 1=Shrines, 2=T1/T2, 3=Barracks.                           [def: "2"]
 citadel_unit_status_use_new                 "1"             // This uses new Health Bar, to use old Health Bar change "true" to "false".    [def: "0"]
+citadel_show_chat_wheel_angle_threshold     "0"             // (degrees) Increase this to change how much you have to move your camera angle to make the Chat Wheel instantly visible while holding Ping. [def: "16"]
 
 // --- 4. Lighting & Shadows ---
 lb_enable_baked_shadows                     "0"             // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
@@ -628,6 +630,17 @@ r_citadel_clip_sphere_min_opacity           "0"             // Removes the blur 
 //r_citadel_clip_sphere_cone_angle          "40"            //                                                                  [def: "40"]
 //r_citadel_clip_sphere_distance_max        "75"            //                                                                  [def: "75"]
 // These are various commands for messing with the pinhole camera. I don't fully understand them and they can be ignored for now.
+
+//citadel_camera_hard_trace_radius          "32"            // The radius of the cylinder to trace for hard camera occlusion. Based on reading the cvars docs I assume this is like the bounding box of the camera [def: "16"]
+//citadel_fibonnaci_sphere_trace_los_max    "160"           // How big to cap the size of the sphere when checking for really large explosion/effects [def: "160"]
+citadel_camera_height                       "180"           // The look at point of the camera is vertically offset by this distance. [def: "63"]
+citadel_camera_parrot_pov                   "false"         // Force the camera to be in parrot POV. Useful for tuning the closest position. [def: "false"]
+citadel_camera_pitch_max                    "160"           // The maximum pitch angle allowed on the camera.
+citadel_camera_pitch_min                    "-160"          // The minimum pitch angle allowed on the camera.
+
+citadel_camera_fade_other_near_opacity      "0.1" //(developmentonly clientdll defensive)
+citadel_camera_fade_viewed_near_dist        "40" //(developmentonly clientdll defensive)
+
 
 // --- 9. Texture Quality ---
 r_texture_budget_threshold                  "0.7"           // Reduce texture memory pool size when this percentage of the budget is full. [def: "0.8"]
@@ -774,6 +787,7 @@ r_physics_particle_op_spawn_scale           "0"             // Prevents physics-
 r_world_wind_strength                       "0"             // Disables wind effects, cosmetic only.                            [def: "40"]
 
 // ================ Lod & Culling ================
+sc_allow_dithered_lod                       "false"         // Pretty sure this just turns dithering off for when switching between lods. Isn't a big deal [def: "true"]
 //sc_instanced_mesh_size_cull_bias          "10"            // Bias for size culling of instanced meshes                        [def: "1.5"]
 citadel_use_pvs_for_players                 "true"          // Default culls players when out of view                           [def: "false"]
 mat_viewportscale                           "0.01"          // Scale down the main viewport I belive this gets overwritten by video.txt [def: "1"]
@@ -852,35 +866,35 @@ csm_viewmodel_shadows                       "false"         // All of these comm
 //r_wait_on_present true
 
 // ================ Convars You Shouldn't/Can't Mess With But I Want to Maintain the Documentation ================ 
-//r_extra_render_frames                     "1"             // Setting this to anything above 0 causes issues with latency. negative values cause the game to crash. [def: "0"]
-//cl_particle_max_count                     "1500"          // Maximum allowed particles. Setting it too low will cause issues. With flooding from the console.  [def: "0"]
-//cl_phys_enabled                           "false"         // You can disable physics and might see an improvement in framerate, however a lot will be buggy.   [def: "true"]
-gpu_level                                   "1"             // GPU level literally doesn't matter, gets set to 2 in the engine
-r_citadel_npr_force_solid_outline           "false"         // Causes odd visual bugs with dragons and neutrals when set to true    [def: "false"]
-r_citadel_npr_outlines                      "false"         // Enable outlines on enemy players.                                [def: "true"]
-r_citadel_npr_outlines_max_dist             "1"             // Limits outline distance to reduce unnecessary processing.        [def: "1000"]
-r_citadel_selection_outline2_alpha          "0.2"           // Outlines on enemy players and abilities on a scale of 0-1.       [def: "0.8"]
-r_drawskybox                                "true"          // Can't be changed anymore                                             [def: "true"]
-//sc_disable_procedural_layer_rendering     "false"         // Disables rendering, ie the screen is black. [def: "false"]
-//sc_throw_away_all_layers true
-//sc_skip_traversal true
+//r_extra_render_frames                         "1"             // Setting this to anything above 0 causes issues with latency. negative values cause the game to crash. [def: "0"]
+//cl_particle_max_count                         "1500"          // Maximum allowed particles. Setting it too low will cause issues. With flooding from the console.  [def: "0"]
+//cl_phys_enabled                               "false"         // You can disable physics and might see an improvement in framerate, however a lot will be buggy.   [def: "true"]
+gpu_level                                       "1"             // GPU level literally doesn't matter, gets set to 2 in the engine
+r_citadel_npr_force_solid_outline               "false"         // Causes odd visual bugs with dragons and neutrals when set to true    [def: "false"]
+r_citadel_npr_outlines                          "false"         // Enable outlines on enemy players.                                [def: "true"]
+r_citadel_npr_outlines_max_dist                 "1"             // Limits outline distance to reduce unnecessary processing.        [def: "1000"]
+r_citadel_selection_outline2_alpha              "0.2"           // Outlines on enemy players and abilities on a scale of 0-1.       [def: "0.8"]
+r_drawskybox                                    "true"          // Can't be changed anymore                                             [def: "true"]
+
+//panorama_worldpanel_update_culling            "true"          // Messes with health bar rendering, the information will be inaccurate unless close to the target if set to true. It is weird.       [def: "false"]
+
+//sc_disable_procedural_layer_rendering         "false"         // Disables rendering, ie the screen is black.          [def: "false"]
+//sc_throw_away_all_layers                      "true"          // Disables rendering, ie the screen is black.          [def: "false"]
+//sc_skip_traversal                             "true"          // Disables rendering, ie the screen is black.          [def: "false"]
+
+//sc_aggregate_show_outside_vis                 "true"          // This makes the entire map stop rendering             [def: "false"]
 
 // IN TESTING
-//panorama_worldpanel_update_culling              "true"        // Messes with health bar rendering. it is weird.   [def: "false"]
-//sc_aggregate_show_outside_vis                   "true"        //this makes the entire map stop rendering          [def: "false"]
-cl_aggregate_particles                          "true"
-cl_batch_entity_list_ops_during_latch           "true"
-phys_batch_ray_test                             "16"
-r_citadel_distancefield_max_distance            "16"
-r_citadel_distancefield_min_screen_space_size   "99"
-r_citadel_gpu_culling                           "true"
-r_citadel_gpu_culling_shadows                   "true"
-r_citadel_gpu_culling_two_pass                  "true"
-sc_aggregate_gpu_culling_conservative_bounds    "false"
-sc_aggregate_gpu_culling_show_culled            "true"
+cl_aggregate_particles                          "true"          // Doesn't seem to cause any issues but a benchmark proper should be conducted [def: "false"]
+//cl_batch_entity_list_ops_during_latch         "true"          // Hell if I know
+phys_batch_ray_test                             "16"            // Don't know what this does? shouldn't be needed deadlock doesn't have many physics objects
+//r_citadel_distancefield_max_distance          "16"            // Doesn't seem to do anything
+//r_citadel_distancefield_min_screen_space_size "99"            // Same as above
+r_citadel_gpu_culling                           "true"          // The game barely uses the gpu so this is a win
+r_citadel_gpu_culling_two_pass                  "true"          // No clue tbh
+sc_aggregate_gpu_culling_conservative_bounds    "false"         // No clue 
+sc_aggregate_gpu_culling_show_culled            "true"          // Debug I think, doesn't seem to do anything
 sc_aggregate_render_mesh_shader                 "false"
-sc_allow_dithered_lod                           "false"
-sc_force_materials_batchable                    "true"
 sc_force_materials_batchable                    "true"
 
 //  Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
@@ -933,14 +947,14 @@ sc_aggregate_rtproxy_unique_geo false
 sc_allow_dithered_lod false
 particle_cluster_use_collision_hulls false
 cl_fasttempentcollision 20
-cam_collision 0
 citadel_unit_status_allies_see_thru_walls false
 citadel_unit_status_allies_see_thru_walls_max_distance 30
-//citadel_unit_status_dpi "6" // This increases the size of the health bar. Unfortunately I think this lowers performance. A shame.
 citadel_unit_status_delta_decay_rate 2 // how quickly the yellow to indicate damage fades from the health bar.
-citadel_camera_hard_trace_radius 32
-citadel_fibonnaci_sphere_trace_los_max 32
-citadel_show_chat_wheel_angle_threshold 0
+
+//citadel_camera_hard_trace_radius          "32"        //put under camera tweaks :D
+//citadel_fibonnaci_sphere_trace_los_max    "32"        //put under camera tweaks :D
+//cam_collision 0
+
 rtx_dynamic_blas    false
 rtx_dynamic_blas_caching false
 rtx_force_default_hitgroup true
@@ -1083,17 +1097,6 @@ thread_pool_option 4
         "citadel_enable_vdata_sound_preload"    "true"
         "r_add_views_in_pre_output"             "1"
 
-
-"r_citadel_npr_outlines" "true"
-"r_citadel_npr_outlines_max_dist" "1000"
-"citadel_player_outline_enemies" "true"
-"citadel_trooper_outline_enabled" "true"
-"citadel_trooper_glow_disabled" "false"
-"r_citadel_selection_outline2_alpha" "1"
-"citadel_trooper_friendly_glow_disabled" "false"
-r_citadel_npr_force_solid_outline           "true" 
-
-citadel_boss_glow_disabled                  "1"             // Disables boss and walker glow/highlight effect. Set to "0" if you want Walkers to have outlines
 
 
     }
