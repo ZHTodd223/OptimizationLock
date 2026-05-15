@@ -13,7 +13,7 @@
 //         /!#%|'-_- '\%k*|  
 //     o   |*@/        \_/      
 //         \)&|                  
-// OptimizationLock v2.3.1 by Sqooky with help from others <3
+// OptimizationLock v2.3.2 by Sqooky with help from others <3
 
 // As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more
 //- Sqooky:             I am the primary developer and maintainer of the project, but without everyone else here this project would not be maintained to this degree
@@ -548,7 +548,7 @@
 //      If you would like to donate as a means of showing thanks I have a kofi.     \\
 //      https://ko-fi.com/sqooky                                                    \\
 
-// ---------------- GAMEINFO CONFIG Sqooky's.gi / OptimizationLock -- ver. 2.3.1 --------------- \\
+// ---------------- GAMEINFO CONFIG Sqooky's.gi / OptimizationLock -- ver. 2.3.2 --------------- \\
             // Check here for updates: https://gamebanana.com/mods/656341 \\
            // Downloaded from: https://github.com/Sqooky/OptimizationLock  \\
           // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
@@ -582,7 +582,7 @@ citadel_hud_objective_health_enabled        "2"             // 0=Off, 1=Shrines,
 citadel_unit_status_use_new                 "1"             // This uses new Health Bar, to use old Health Bar change "true" to "false".    [def: "0"]
 
 // --- 4. Lighting & Shadows ---
-lb_enable_baked_shadows                     "1"             // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
+//lb_enable_baked_shadows                     "1"             // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
 lb_enable_dynamic_lights                    "1"             // *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
 lb_enable_stationary_lights                 "1"             // *Disables stationary lights (map looks flatter but more performant).         [def: "1"]
 
@@ -900,7 +900,7 @@ sc_force_materials_batchable                    "true"
 //- Lina 🜏
 
 
-// --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.3.1 ------------------------------- \\
+// --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.3.2 ------------------------------- \\
 
 //steam_inputhandler_enabled    "0"         // Probs good to disable but it does what it says on the tin and I want to make a preset for steam deck users first [def: "true"]
 

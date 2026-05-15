@@ -981,7 +981,7 @@ r_texture_stream_throttle_count_over_budget "0"
 "citadel_unit_status_hide_names" "1"         // Removes player names from health bars (text rendering is heavy).
 "citadel_hud_objective_health_idle_timeout" "0" // Boss/Tower health bars vanish the millisecond they stop taking damage.
 "citadel_camera_parrot_smoothing_rate" "0"   // Stops the camera from running math to "smooth" itself back into place after hitting a wall.
-"steam_inputhandler_enabled" "0"             // Completely disables Steam Input API polling. Huge for 1% lows if you only use Keyboard/Mouse.
+//"steam_inputhandler_enabled" "0"             // Completely disables Steam Input API polling. Huge for 1% lows if you only use Keyboard/Mouse.
 
 "panorama_clear_frames_on_device_restore" "0"
 
