@@ -29,7 +29,12 @@
 //- Soulx:              Gave me five dollars and told me about spirolactone (fucking sick I love you).
 //- Tamara Mochaccina:  Contributed vindicta scope fix and the fog fix.  
 
-
+// Donors!
+// I love you all so much
+// - Soulx
+// - Boot
+// - Xeno
+// - Sonny
 
 
 //      If you would like to donate as a means of showing thanks I have a kofi.     \\
@@ -386,5 +391,11 @@ sc_force_materials_batchable                    "true"
 //- Boot
 //- Lina 🜏
 
+// Donors!
+// I love you all so much
+// - Soulx
+// - Boot
+// - Xeno
+// - Sonny
 
 // --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.3.1 ------------------------------- \\
