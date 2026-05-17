@@ -645,7 +645,7 @@ panorama_disable_box_shadow                 "1"             // Disables UI box s
 panorama_temp_comp_layer_min_dimension      "128"           // Based on the name I'm implied to believe this is the minimum size for panorama compositing, ie blur, rounded corners, etc. [def: "512"]
 panorama_transition_time_factor             "2"             // faster transition for the stuff that doesnt use animation
 panorama_use_new_occlusion_invalidation     "1"             // SPOOKY TESTING CONVARS HAS IT SET TO ZERO
-r_citadel_enable_pano_world_blur            "false"         // Default: true Enable world-blur style
+//r_citadel_enable_pano_world_blur            "false"         // Default: true Enable world-blur style
 r_dashboard_render_quality                  "0"             // Sets dashboard/UI render quality (lower = cheaper UI rendering). [def: "1"]
 
 // ================ Shadows ================
