@@ -1,6 +1,12 @@
 To either request support or contribute findings to the project, our Discord Server can be found [here](https://discord.gg/EF3Jq57jQv).  
 If you would like to donate as a means of showing thanks I have a kofi here! https://ko-fi.com/sqooky
 
+**Donors!**
+I love you all so much
+- Soulx
+- Boot
+- Xeno
+- Sonny
 
 <div>
   <img src="https://github.com/Sqooky/OptimizationLock/blob/main/media/joy.png?raw=true" alt="A picture reading Sqooky's .gi A collage of performance configs with the intent of optimizing the game."/>
@@ -74,19 +80,20 @@ Every variation of the config included in this repository has mod support added.
 
 # Credits 
   Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
-- Sqooky:             I am the primary developer and maintainer of the project, but without everyone else here this project would not be maintained to this degree  
-- JasperP:            My personal hero.  
-- Artemon121:         Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game.  
-- Boot:               Provided the csm cvars which had a notable performance improvement.  
-- Brullee:            Removed fake cvars, redundant commands, added cvarlist.md, and reformatted config  
-- Dacooder:           Made a wonderful video highlighting me and the config.  
-- Kaizuchaneru:       While not directly invovled in the deveopment, they tested most cvars  
-- Kin:                Did an insane amount of benchmarking unprompted.  
-- Krisha:             Acts as my guinea pig for test versions.  
-- Maihdenless:        Started the original OptimisationLock & its Discord.  
-- Piggy:              Let me mirror his config.  
-- Soulx:              Gave me five dollars and told me about spirolactone (fucking sick I love you)
-- Tamara Mochaccina:  Contributed vindicta scope fix and the fog fix.  
+- Sqooky:               I am the primary developer and maintainer of the project, but without everyone else here this project would not be maintained to this degree  
+- JasperP:              My personal hero.  
+- Artemon121:           Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game.  
+- Boot:                 Incredibly nice guy, gave me five dollars, made his config, and did a ton of independent testing and help
+- Brullee:              Removed fake cvars, redundant commands, added cvarlist.md, and reformatted config  
+- Dacooder:             Made a wonderful video highlighting me and the config.  
+- Kaizuchaneru:         While not directly invovled in the deveopment, they tested most cvars  
+- Kin:                  Did an insane amount of benchmarking unprompted.  
+- Krisha:               Acts as my guinea pig for test versions.  
+- Maihdenless:          Started the original OptimisationLock & its Discord.  
+- Piggy:                Let me mirror his config.  
+- Soulx:                Gave me five dollars and told me about spirolactone (fucking sick I love you)
+- Tamara Mochaccina:    Contributed vindicta scope fix and the fog fix.  
+
 
 ## Cool People I've Met Because of This Project Who I Want to Thank for being themselves
 - 6Daves

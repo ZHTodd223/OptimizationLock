@@ -11,7 +11,7 @@
 //          |f1/0   @\Y?u\       
 //      o   /u'\_ v _/ f:j|    o
 //         /!#%|'-_- '\%k*|  
-//     o   |*@/        \_/      
+//     o   |*@/        \_/       
 //         \)&|                  
 // OptimizationLock v2.3.1 by Sqooky with help from others <3
 
@@ -567,6 +567,13 @@
 
     ConVars
     {
+
+
+
+citadel_damage_summary_max_entries          "32"
+citadel_death_linger_time                   "6"
+
+
 //      If you would like to donate as a means of showing thanks I have a kofi.     \\
 //      https://ko-fi.com/sqooky                                                    \\
 
@@ -607,7 +614,7 @@ citadel_show_chat_wheel_angle_threshold     "0"             // (degrees) Increas
 
 // --- 4. Lighting & Shadows ---
 lb_enable_baked_shadows                     "0"             // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
-lb_enable_dynamic_lights                    "0"             // *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
+lb_enable_dynamic_lights                    "1"             // *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
 lb_enable_stationary_lights                 "0"             // *Disables stationary lights (map looks flatter but more performant).         [def: "1"]
 
 // --- 5. Skybox Rendering ---
@@ -633,14 +640,10 @@ r_citadel_clip_sphere_min_opacity           "0"             // Removes the blur 
 
 //citadel_camera_hard_trace_radius          "32"            // The radius of the cylinder to trace for hard camera occlusion. Based on reading the cvars docs I assume this is like the bounding box of the camera [def: "16"]
 //citadel_fibonnaci_sphere_trace_los_max    "160"           // How big to cap the size of the sphere when checking for really large explosion/effects [def: "160"]
-citadel_camera_height                       "180"           // The look at point of the camera is vertically offset by this distance. [def: "63"]
-citadel_camera_parrot_pov                   "false"         // Force the camera to be in parrot POV. Useful for tuning the closest position. [def: "false"]
-citadel_camera_pitch_max                    "160"           // The maximum pitch angle allowed on the camera.
-citadel_camera_pitch_min                    "-160"          // The minimum pitch angle allowed on the camera.
 
-citadel_camera_fade_other_near_opacity      "0.1" //(developmentonly clientdll defensive)
-citadel_camera_fade_viewed_near_dist        "40" //(developmentonly clientdll defensive)
-
+// Uncommenting these cvars will make it so that you can look above/behind yourself. It's kinda awesome but reverses your movement input and could make some people motion sick.
+//citadel_camera_pitch_max                    "160"           // The maximum pitch angle allowed on the camera.                 [def: "89"]
+//citadel_camera_pitch_min                    "-160"          // The minimum pitch angle allowed on the camera.                 [def: "-89"]
 
 // --- 9. Texture Quality ---
 r_texture_budget_threshold                  "0.7"           // Reduce texture memory pool size when this percentage of the budget is full. [def: "0.8"]
@@ -770,7 +773,7 @@ cl_particle_batch_mode                      "1"             // Has a range of 1 
 cl_particle_fallback_base                   "10"            // Base for falling back to cheaper effects under load.             [def: "0"] 
 cl_particle_fallback_multiplier             "20"            // Multiplier for falling back to cheaper effects under load.       [def: "0"]
 cl_particle_sim_fallback_base_multiplier    "40"            // How aggressive the switch to fallbacks will be depending on how far over the cl_particle_sim_fallback_threshold_ms the sim time is.  Higher numbers are more aggressive. [def: "5"] 
-cl_particle_sim_fallback_threshold_ms       "0.001"         // Amount of simulation time that can elapse before new systems start falling back to cheaper versions [def: "6"] 
+cl_particle_sim_fallback_threshold_ms       "1"             // Amount of simulation time that can elapse before new systems start falling back to cheaper versions [def: "6"] 
 particle_cluster_nodraw                     "1"             // Skips drawing particle “clusters”/grouped particle batches (performance, fewer small effects). [def: "0"]
 r_RainParticleDensity                       "0"             // Density of Particle Rain 0-1.                                    [def: "1"]
 r_draw_particle_children_with_parents       "0"             // I believe this handles the drawing of little visual flourish particles. [def: "-1"]
@@ -783,6 +786,7 @@ r_particle_max_texture_layers               "4"             // Anything below 4 
 r_particle_model_per_thread_count           "64"            // I believe it is how many particle models a thread is allowed to handle.  [def: "32"]
 r_particle_skip_postsim                     "true"          // Not entirely sure what it does, going off of the name I'd imagine it skips the post simulation, this is a testvar [def: "false"]
 r_particle_timescale                        "1.1"           // Speeds up particle simulation, thus making them end sooner, however this causes visual desyncs, most notably with big effects that last a while such as infernus ult. Please tweak this to what you are comfortable with. [def: "1"]
+cl_aggregate_particles                      "true"          // Doesn't seem to cause any issues but a benchmark proper should be conducted [def: "false"]
 r_physics_particle_op_spawn_scale           "0"             // Prevents physics-based particle spawns.                          [def: "1"]
 r_world_wind_strength                       "0"             // Disables wind effects, cosmetic only.                            [def: "40"]
 
@@ -875,7 +879,10 @@ r_citadel_npr_outlines                          "false"         // Enable outlin
 r_citadel_npr_outlines_max_dist                 "1"             // Limits outline distance to reduce unnecessary processing.        [def: "1000"]
 r_citadel_selection_outline2_alpha              "0.2"           // Outlines on enemy players and abilities on a scale of 0-1.       [def: "0.8"]
 r_drawskybox                                    "true"          // Can't be changed anymore                                             [def: "true"]
-
+//sc_aggregate_gpu_culling_show_culled            "true"          // Debug I think, doesn't seem to do anything                     [def: "false"]
+//sc_aggregate_render_mesh_shader                 "false"         // Using mesh shaders if available instead of drawcalls.          [def: "true"]
+//citadel_damage_text_show_effectiveness        "true"          // This is supposed to show if your target has any spirit/bullet resist, but seems to be broken rn. [def: "false"]
+//phys_batch_ray_test                           "16"            // Don't know what this does? shouldn't be needed deadlock doesn't have many physics objects  [def: "0"]
 //panorama_worldpanel_update_culling            "true"          // Messes with health bar rendering, the information will be inaccurate unless close to the target if set to true. It is weird.       [def: "false"]
 
 //sc_disable_procedural_layer_rendering         "false"         // Disables rendering, ie the screen is black.          [def: "false"]
@@ -885,16 +892,15 @@ r_drawskybox                                    "true"          // Can't be chan
 //sc_aggregate_show_outside_vis                 "true"          // This makes the entire map stop rendering             [def: "false"]
 
 // IN TESTING
-cl_aggregate_particles                          "true"          // Doesn't seem to cause any issues but a benchmark proper should be conducted [def: "false"]
-//cl_batch_entity_list_ops_during_latch         "true"          // Hell if I know
-phys_batch_ray_test                             "16"            // Don't know what this does? shouldn't be needed deadlock doesn't have many physics objects
-//r_citadel_distancefield_max_distance          "16"            // Doesn't seem to do anything
-//r_citadel_distancefield_min_screen_space_size "99"            // Same as above
-r_citadel_gpu_culling                           "true"          // The game barely uses the gpu so this is a win
-r_citadel_gpu_culling_two_pass                  "true"          // No clue tbh
-sc_aggregate_gpu_culling_conservative_bounds    "false"         // No clue 
-sc_aggregate_gpu_culling_show_culled            "true"          // Debug I think, doesn't seem to do anything
-sc_aggregate_render_mesh_shader                 "false"
+r_frame_sync_enable                             "false"         // No documentation, not sure if this does anything                 [def: "true"]
+r_force_zprepass                                "0"             // 0: Force z prepass off. 1: Force on. -1: Don't force             [def: "-1"]
+// With my understanding of how zprepasses work this should reduce cpu usage if set to zero, but that's under the assumption that valve's implementation isn't properly optimized. Please play with this. Your mileage may vary.
+
+//r_citadel_distancefield_max_distance          "16"            // Doesn't seem to do anything, or if it does it is overwritten. [def: "2048"]
+//r_citadel_distancefield_min_screen_space_size "99"            // Same as above                                                    [def: "0.015"]
+r_citadel_gpu_culling                           "true"          // The game barely uses the gpu so this is a win                    [def: "true"]
+r_citadel_gpu_culling_two_pass                  "true"          // No clue tbh                                                      [def: "true"]
+sc_aggregate_gpu_culling_conservative_bounds    "false"         // No clue                                                          [def: "false"]
 sc_force_materials_batchable                    "true"
 
 //  Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
@@ -926,18 +932,14 @@ sc_force_materials_batchable                    "true"
 //- Tamara Mochaccina
 //- And you, thank you for using this and making my day <3. Please take care of yourselves.
 // --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.3.1 ------------------------------- \\
-citadel_radial_distortion 1
-vis_sunlight_enable false
 
-vismon_trace_limit 0
-cc_captiontrace 0
-citadel_fissure_forward_trace_distance 0
-//citadel_melee_draw_traces true
-cloth_ground_plane_thickness 0
-disable_source_soundscape_trace true
-citadel_perf_interval_report_s 100000
-citadel_video_preset 0
-cl_frametime_summary_report_detailed false
+citadel_radial_distortion           "1"    // 0: Off 1: Distorts the visible distribution of arcs based on the mouse pointer. [def: "0"]
+
+cc_captiontrace                     "0"         // Show missing closecaptions (0 = no, 1 = devconsole, 2 = show in hud)
+disable_source_soundscape_trace     "true"      // Bypasses lookup of soundscapes for indvidual audio sources when enabled. [def: "false"]
+citadel_perf_interval_report_s      "100000"    // The interval that we record performance stats to the log at measured in seconds [def: "60"]
+citadel_video_preset                "0"         // Rendering performance level. min 0, max 3 [def: "3"]
+cl_frametime_summary_report_detailed "false"    // When a perf report is dumped at the end of the session, should it be detailed?
 
 sc_aggregate_indirect_draw_compaction_threshold 1
 sc_instanced_mesh_opaque_fade false
@@ -965,11 +967,10 @@ r_dashboard_render_quality true
 r_particle_model_new 0
 r_particle_model_new8 0
 
-r_particle_multiplier 0.3
 //hud_fastswitch 0
-//panorama_allow_texture_composition_layer_fast_path true
+panorama_allow_texture_composition_layer_fast_path true
 //panorama_transition_time_factor     "0"
-//steam_inputhandler_enabled          "0"
+steam_inputhandler_enabled          "0"
 //panorama_disable_render_target_cache "true"
 //r_skip_precache_validation_check true
 //cl_skip_update_animations true
@@ -977,7 +978,7 @@ r_particle_multiplier 0.3
 //multigpu_skip_transfers true
 //panorama_skip_composition_layer_content_paint true
 //panorama_skip_compo true
-thread_pool_option 4
+thread_pool_option                      "4"     // If I understand correctly, this should be how threads are handled relative to the game, but there isn't a clear indication of what changing it even does. For now I have it at -1 which is the default, but your mileage may vary. [def: "-1"]
 // 1 gives "GlobalThreadPoolMode"		"efficiency"
 // 2 removes it from boot.vcfg
 // 3 gives "GlobalThreadPoolMode"		"undifferentiated"
@@ -988,6 +989,28 @@ thread_pool_option 4
 
 // -1 Default
 // -2 removes it from boot.vcfg
+citadel_camera_listening_offset -1
+r_cache_pool_allocations false
+citadel_hud_objective_health_debug_show_midboss true
+r_vma_defrag_algorithm 1
+mat_max_lighting_complexity 1
+r_update_particles_on_render_only_frames true
+r_citadel_screenspace_particles_full_res false
+r_citadel_shadow_caching false
+r_draw_first_tri_only true
+r_frame_sync_enable true
+//r_nearz 20
+r_particle_batch_collections true
+//r_particle_explicit_fetch true
+r_particle_fixedrandomseeds true
+r_particle_max_detail_level 1
+r_particle_model_per_thread_count 16
+
+
+//r_showdebugoverlays true
+r_skip_precache_validation_check true
+//4493
+r_vulkan_force_sync1 true
         "rate"
         {
             "min"       "98304"
@@ -1084,8 +1107,8 @@ thread_pool_option 4
         "snd_soundmixer"                        "Default_Mix"
         "cloth_filter_transform_stateless" "0"
 
-        "cl_joystick_enabled" "0"
-        "panorama_joystick_enabled" "0"
+        "cl_joystick_enabled" "1"
+        "panorama_joystick_enabled" "1"
 
         "snd_event_browser_focus_events" "true"
 
@@ -1110,6 +1133,7 @@ thread_pool_option 4
         "ShowLowAvailableVirtualMemoryMessageBox" "1"
     }
 }
+
 
 
 

@@ -708,7 +708,7 @@
 "r_citadel_shadow_quality" "0" //Default: 1<br>Shadow Quality
 "r_effects_bloom" "false" //Default: true<br>
 "r_citadel_glow_health_bars" "false" //default true
-"r_citadel_enable_pano_world_blur" "false" //Default: true<br>Enable world-blur style
+"r_citadel_enable_pano_world_blur" "true" //Default: true<br>Enable world-blur style
 "r_depth_of_field" "false" //default true
 "r_directional_lightmaps" "false" //default true
 "r_citadel_distancefield_blur" "false" //Default: true<br>Enable/Disable distance field blur
