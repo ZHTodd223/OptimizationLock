@@ -652,8 +652,8 @@ r_texture_stream_mip_bias                   "8"             // Worth adjusting, 
 r_texturefilteringquality                   "3"             // Texture filtering, has very low fps impact. 0: Bilinear, 1: Trilinear, 2: Aniso 2x, 3: Aniso 4x, 4: Aniso 8x, 5: Aniso 16x
 
 // --- 10. Render Distance ---
-r_farz                                      "7000"          // This controls the far clipping plane, ie building/player popin   [def: "-1"]
-r_mapextents                                "7000"          // Far clipping plane, this will make buildings pop in and out      [def: "16384"] damn that's an oddly specific number
+r_farz                                      "-1"          // This controls the far clipping plane, ie building/player popin   [def: "-1"]
+r_mapextents                                "16384"          // Far clipping plane, this will make buildings pop in and out      [def: "16384"] damn that's an oddly specific number
 
 // ================ IMPORTANT ================ 
 r_particle_max_size_cull                    "999"           //                                                                  [def: "1200"]
