@@ -1,6 +1,9 @@
 To either request support or contribute findings to the project, our Discord Server can be found [here](https://discord.gg/EF3Jq57jQv).  
 If you would like to donate as a means of showing thanks I have a kofi here! https://ko-fi.com/sqooky
 
+# Translations
+### [Instrucciones en español aqui](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_spanish.md)
+
 **Donors!**
 I love you all so much
 - Soulx
@@ -78,25 +81,38 @@ Comment out ``sc_screen_size_lod_scale_override`` or increase the value.
 # Mod Support
 Every variation of the config included in this repository has mod support added. For those who wish to remove or add it back in, remove ``Game                citadel/addons`` From the searchpaths bracket.
 
-# Credits 
-  Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
-- Sqooky:               I am the primary developer and maintainer of the project, but without everyone else here this project would not be maintained to this degree  
-- JasperP:              My personal hero.  
-- Artemon121:           Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game.  
-- Boot:                 Incredibly nice guy, gave me five dollars, made his config, and did a ton of independent testing and help
-- Brullee:              Removed fake cvars, redundant commands, added cvarlist.md, and reformatted config  
-- Dacooder:             Made a wonderful video highlighting me and the config.  
-- Kaizuchaneru:         While not directly invovled in the deveopment, they tested most cvars  
-- Kin:                  Did an insane amount of benchmarking unprompted.  
-- Krisha:               Acts as my guinea pig for test versions.  
-- Maihdenless:          Started the original OptimisationLock & its Discord.  
-- Piggy:                Let me mirror his config.  
-- Soulx:                Gave me five dollars and told me about spirolactone (fucking sick I love you)
-- Tamara Mochaccina:    Contributed vindicta scope fix and the fog fix.  
+# Credits
+ As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more.  
+ Major thanks to all of these individuals from the bottom of my heart. They are all lovely.  
+- Sqooky:             I am the primary developer and maintainer of the project, but without everyone else here this project would not be maintained to this degree.  
+- JasperP:            My personal hero. (Valve dev who reached out to me due to my work on the project.)  
+- Boot:               Provided the csm cvars which had a notable performance improvement.  
+- Brullee:            Removed fake cvars, redundant commands, added cvarlist.md, and reformatted config.  
+- Kaizuchaneru:       While not directly invovled in the deveopment, they tested most cvars.  
+- Tamara Mochaccina:  Contributed vindicta scope fix and the fog fix.  
 
+## Donors
+ Thank you so much. Even considering that you would view my work as deserving of any donation at all is incredible. I love you all  
+- Boot:   Gave me five dollars and is just a wonderful person and friend at a baseline
+- Sonny:  Gave me five dollars and waited through me setting up a paypal account and didn't change their mind
+- Soulx:  Gave me five dollars and told me about spirolactone 
+- Xeno:   Very politely waited for me to figure out how to accept donations and was very polite about it
 
-## Cool People I've Met Because of This Project Who I Want to Thank for being themselves
+ Translators
+- Egyptianscale:                  Translated to Russian
+- Tamara Mochaccina and Heathen:  Translated to Spanish
+
+ Misc
+- Artemon121:     Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game.
+- Dacooder:       Contributed one fix, copied the config, distributed it as his own, and when I asked why he removed accredition despite previously calling me "the brains of the project" called me a harasser and proceeded to make two videos and a google doc exposing me. Honestly that made my day.
+- Kin:            Did an insane amount of benchmarking unprompted.
+- Kunet:          Made a formatter for the gameinfo sytax! This is why things are properly indented! That's LIT.
+- Maihdenless:    Started the original OptimisationLock & its Discord.
+- Piggy:          Let me mirror his config.
+
+ Cool people I've met because of this project who I want to thank anyway
 - 6Daves
+- Achira
 - Anartoast
 - Boot
 - GoreDaughter
@@ -108,9 +124,6 @@ Every variation of the config included in this repository has mod support added.
 - Masteroms
 - PeachCebo
 - Tamara Mochaccina
-- Soulx
-- Piggy
-- Chatbaran
 - And you, thank you for using this and making my day <3. Please take care of yourselves.
 
 ## Wonderful People Who Sourced Screenshots for me <33333
