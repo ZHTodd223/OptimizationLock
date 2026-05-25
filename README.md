@@ -105,6 +105,7 @@ Every variation of the config included in this repository has mod support added.
 - Egyptianscale:                    Translated to Russian
 - Tamara Mochaccina and Heathen:    Translated to Spanish
 - Linaa and anartoast:              Translated to Portuguese
+- Macchiako:                        Translated to Bulgarian
 
 ## Misc
 - Artemon121:     Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game.
