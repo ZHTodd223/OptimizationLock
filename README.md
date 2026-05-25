@@ -1,6 +1,7 @@
 ## Translations
 ### [Instrucciones en español aqui](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_spanish.md)
 ### [Инструкции на русском тута](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_russian.md)
+### [Instruções em Português aqui](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_portuguese.md)
 ## Main body
 To either request support or contribute findings to the project, our Discord Server can be found [here](https://discord.gg/EF3Jq57jQv).  
 If you would like to donate as a means of showing thanks I have a kofi here! https://ko-fi.com/sqooky  
@@ -101,8 +102,9 @@ Every variation of the config included in this repository has mod support added.
 - Xeno:   Very politely waited for me to figure out how to accept donations and was very polite about it
 
 ## Translators
-- Egyptianscale:                  Translated to Russian
-- Tamara Mochaccina and Heathen:  Translated to Spanish
+- Egyptianscale:                    Translated to Russian
+- Tamara Mochaccina and Heathen:    Translated to Spanish
+- Linaa and anartoast:              Translated to Portuguese
 
 ## Misc
 - Artemon121:     Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game.
