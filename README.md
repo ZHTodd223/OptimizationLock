@@ -91,6 +91,7 @@ Every variation of the config included in this repository has mod support added.
 - Brullee:            Removed fake cvars, redundant commands, added cvarlist.md, and reformatted config.  
 - Kaizuchaneru:       While not directly invovled in the deveopment, they tested most cvars.  
 - Tamara Mochaccina:  Contributed vindicta scope fix and the fog fix.  
+- RoseyLemonz:        Removed duplicate cvars
 
 ## Donors
  Thank you so much. Even considering that you would view my work as deserving of any donation at all is incredible. I love you all  
