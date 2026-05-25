@@ -3,6 +3,7 @@
 ### [Инструкции на русском тута](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_russian.md)
 ### [Instruções em Português aqui](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_portuguese.md)
 ### [Инструкции на български тук](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_bulgarian.md)
+### [Istruzioni in italiano qui](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_italian.md)
 ## Main body
 To either request support or contribute findings to the project, our Discord Server can be found [here](https://discord.gg/EF3Jq57jQv).  
 If you would like to donate as a means of showing thanks I have a kofi here! https://ko-fi.com/sqooky  
@@ -20,7 +21,7 @@ I love you all so much
 
 # Base Instructions
 To install the performance config replace the gameinfo.gi in ``steamapps/common/deadlock/game/citadel`` with the one downloaded from this repository.
-**There is a video tutorial** for installation avalible [here](https://youtu.be/TbjLbQVN2kE)
+**There is a video tutorial** for installation available [here](https://youtu.be/TbjLbQVN2kE)
 
 # Table
 Here is a list of each config provided in this repository.
@@ -107,12 +108,13 @@ Every variation of the config included in this repository has mod support added.
 - Tamara Mochaccina and Heathen:    Translated to Spanish
 - Linaa and anartoast:              Translated to Portuguese
 - Macchiako:                        Translated to Bulgarian
+- Cyvoid:                           Translated to Italian
 
 ## Misc
 - Artemon121:     Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game.
 - Dacooder:       Contributed one fix, copied the config, distributed it as his own, and when I asked why he removed accredition despite previously calling me "the brains of the project" called me a harasser and proceeded to make two videos and a google doc exposing me. Honestly that made my day.
 - Kin:            Did an insane amount of benchmarking unprompted.
-- Kunet:          Made a formatter for the gameinfo sytax! This is why things are properly indented! That's LIT.
+- Kunet:          Made a formatter for the gameinfo syntax! This is why things are properly indented! That's LIT.
 - Maihdenless:    Started the original OptimisationLock & its Discord.
 - Piggy:          Let me mirror his config.
 
