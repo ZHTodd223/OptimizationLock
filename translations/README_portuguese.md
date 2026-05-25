@@ -9,7 +9,7 @@ Eu amo muito todos vocês!
 - Sonny
 
 <div>
-  <img src="https://github.com/Sqooky/OptimizationLock/blob/main/media/joy.png?raw=true" alt="Uma imagem que lẽ o seguinte: (No meio) Uma coletânea de configurações com a intenção de otimizar o jogo. (Em baixo) Ou, OptimizationLock v2. (No topo) Obrigada pela toneladas de downloads (40k no GB)!"/>
+  <img src="https://github.com/Sqooky/OptimizationLock/blob/main/media/joy_brazil.png?raw=true" alt="Uma imagem que lẽ o seguinte: (No meio) Uma coletânea de configurações com a intenção de otimizar o jogo. (Em baixo) Ou, OptimizationLock v2. (No topo) Obrigada pela toneladas de downloads (40k no GB)!"/>
 </div>
 
 # Instruções Básicas
