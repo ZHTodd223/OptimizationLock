@@ -1,9 +1,9 @@
-To either request support or contribute findings to the project, our Discord Server can be found [here](https://discord.gg/EF3Jq57jQv).  
-If you would like to donate as a means of showing thanks I have a kofi here! https://ko-fi.com/sqooky
-
 # Translations
 ### [Instrucciones en español aqui](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_spanish.md)
-### [Инструкции на русском тута](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_spanish.md)
+### [Инструкции на русском тута](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_russian.md)
+
+To either request support or contribute findings to the project, our Discord Server can be found [here](https://discord.gg/EF3Jq57jQv).  
+If you would like to donate as a means of showing thanks I have a kofi here! https://ko-fi.com/sqooky  
 
 **Donors!**
 I love you all so much
