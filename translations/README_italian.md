@@ -94,7 +94,7 @@ Tutte le varianti della config incluse in questa repository hanno il supporto de
 
 ## Donatori
  Grazie tantissimo. Anche solo il fatto che ritenete il mio lavoro degno di una donazione è incredibile. Vi amo tutti 
-- Boot:   Mi ha dato cinque dollari e è semplicemente una persona fantastica e un amic in generale  
+- Boot:   Mi ha dato cinque dollari e è semplicemente una persona fantastica e un amico in generale  
 - Sonny:  Mi ha dato cinque dollari e ha aspetto che impostassi un account paypal e non ha cambiato idea
 - Soulx:  Mi ha dato cinque dollari e mi ha informato riguardo allo spironolattone
 - Xeno:   Ha aspettato, in modo molto garbato, che capissi come accettare donazioni e era molto gentile al riguardo
