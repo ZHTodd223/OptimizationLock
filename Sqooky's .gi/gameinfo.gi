@@ -13,7 +13,7 @@
 //         /!#%|'-_- '\%k*|
 //     o   |*@/        \_/
 //         \)&|
-// OptimizationLock v2.4.2 by Sqooky with help from others <3
+// OptimizationLock v2.4.3 by Sqooky with help from others <3
 
 // As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more
 //  Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
@@ -218,14 +218,14 @@ GameInfo
 
 
 
-        MinDXLevel                            "80"
-        MaxPreloadTextureResolution           "2"
-        VulkanRequestSM6                      "true"
+        //MinDXLevel                            "80"
+        //MaxPreloadTextureResolution           "2"
+        //VulkanRequestSM6                      "true"
         // VulkanUseExternalSubpassDependency "true"
         // VulkanRequireFullGPURayTracing     "true"
 
 
-        AllowPartialMipChainImmediateTexLoads "true"
+        //AllowPartialMipChainImmediateTexLoads "true"
 
 
     }
@@ -484,8 +484,7 @@ GameInfo
         EnvironmentMaps              "1"    //                                                                                                      [def: "1"]
         GrassCastsShadows            "0"
 
-        // Stolen from a 2015 gameinfo.gi
-        EnvironmentMapCacheSize "16"
+        EnvironmentMapCacheSize "256"
 
         // These are stolen from CS2
         LPVEdgeBlending "0" // Don't apply the edge fade distance to LPV bounds, we don't blend LPVs in CS2 shaders
@@ -504,13 +503,13 @@ GameInfo
         // RenderMeshlets            "1"
 
 
-        CMTAtlasHeight             "512"
-        CMTAtlasWidth              "512"
-        CSMCascadeResolution       "0" // [def: "2048"]
-        CharacterDecals            "0"
-        CubemapFog                 "0" // [def: "1"]
-        DefaultShadowTextureHeight "0" // [def: "6144"]
-        DefaultShadowTextureWidth  "0" // [def: "6144"]
+        //CMTAtlasHeight             "512"
+        //CMTAtlasWidth              "512"
+        //CSMCascadeResolution       "0" // [def: "2048"]
+        //CharacterDecals            "0"
+        //CubemapFog                 "0" // [def: "1"]
+        //DefaultShadowTextureHeight "0" // [def: "6144"]
+        //DefaultShadowTextureWidth  "0" // [def: "6144"]
         // Temp till I can add support in citadel shaders
         DisableLateAllocatedTransformBuffer         "1"          // [def: "1"]
         DynamicShadowResolution                     "1"          // [def: "1"]
@@ -520,7 +519,7 @@ GameInfo
         FrameBufferCopyFormat                       "R11G11B10F" // [def: "R11G11B10F"]
         GpuLightBinner                              "1"          // [def: "1"]
         GpuLightBinnerSunLightFastPath              "1"          // [def: "1"]
-        GpuLightBinnerSupportViewModelCascade       "1"
+        GpuLightBinnerSupportViewModelCascade       "0"
         HDRFrameBuffer                              "0"
         LayerBatchThresholdFullsort                 "80"    // [def: "20"]
         MinimumLateAllocatedVertexCacheBufferSizeMB "64"    // [def: "64"]
@@ -529,7 +528,7 @@ GameInfo
         SunLightManagerCountTools                   "0"     // [def: "0"]
         SunLightMaxCascadeSize                      "2"     // [def: "4"]
         SunLightShadowRenderMode                    "Depth" // [def: "Depth"]
-        SupportsInstancedFade                       "1"
+        SupportsInstancedFade                       "0"
         Tonemapping                                 "0"    // [def: "0"]
         TransformTextureRowCount                    "1024" // [def: "1024"]
         TransformTextureRowCountToolsMode           "6144" // [def: "6144"]
@@ -608,7 +607,7 @@ GameInfo
         //      If you would like to donate as a means of showing thanks I have a kofi.     \\
         //      https://ko-fi.com/sqooky                                                    \\
 
-        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 2.4.2 -------- \\
+        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 2.4.3 -------- \\
         // The github is here https://github.com/Sqooky/OptimizationLock  \\
         // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
         // The gamebanana:https://gamebanana.com/mods/656341 (it's usually behind, please check the github) \\
@@ -670,6 +669,9 @@ GameInfo
         r_size_cull_threshold "0.9" // *Culls small objects sooner based on screen size threshold (higher = more culling). [def: "0.8"]
 
         // --- 8. Camera Tweaks ---
+
+        citadel_camera_use_vmdl_flatten_horizontal  "false" // From my understanding of how these commands work, they slightly smooth camera inputs. This should make the camera more responsive?   [def: "true"]
+        citadel_camera_use_vmdl_flatten_vertical    "false" //                                                                                                                                      [def: "true"] 
 
         // citadel_camera_listening_offset    "-1"   // To be completely honest I have no idea but I want to test this.  [def: "0"]
         citadel_camera_soft_collision_angle   "360"  //                                                                  [def: "75"]
@@ -956,6 +958,8 @@ GameInfo
         // r_wait_on_present                      "true"
 
         // ================ Convars You Shouldn't/Can't Mess With But I Want to Maintain the Documentation ================
+
+        //lb_enable_envmaps                       "false" // This makes all characters black
         // r_showdebugoverlays                    "true"  // Shows a ton of debug overlays IT MAKES ME SO HAPPY I LOVE IT     [def: "false"]
         // citadel_first_person                   "true"  // Puts you in first person, messes up character rendering
         // r_extra_render_frames                  "1"     // Setting this to anything above 0 causes issues with latency. negative values cause the game to crash. [def: "0"]
@@ -978,11 +982,82 @@ GameInfo
         // sc_skip_traversal                      "true"  // Disables rendering, ie the screen is black.          [def: "false"]
         // sc_aggregate_show_outside_vis          "true"  // This makes the entire map stop rendering             [def: "false"]
 
-                // --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.4.2 ------------------------------- \\
+                // --------------------------------- END OF CONFIG OptimizationLock -- ver. 2.4.3 ------------------------------- \\
 
 
 
         // =============== Cvars in Testing :D ===============
+
+//r_citadel_gpu_preview_denoise false
+//r_citadel_gpu_preview_baked_shadows false
+//r_citadel_depth_prepass_dynamic_objects false
+//ent_joint_lines false
+//ent_joint_names false
+//fog_enable false
+//fog_enableskybox false
+//fx_drawmetalspark false
+//game_particle_manager_requeue_messages false
+//ik_debug_fabrik_forwards_enabled false
+//instant_replay false
+//iv_parallel_latch false
+//labelled_debug_helper_enabled false
+//labelled_debug_helper_show_text false
+//labelled_debug_helper_skeleton_show_bone_names false
+//lb_enable_fog_mixed_shadows false
+//lb_enable_binning false
+//lb_enable_baked_shadows false
+//lb_dynamic_shadow_resolution false
+//lb_dynamic_shadow_penumbra false
+//lb_csm_override_staticgeo_cascades_animated_verts false
+//lb_csm_draw_translucent false
+//lb_enable_lights false
+//lb_enable_newsum false
+//lb_enable_shadow_casting false
+//lb_enable_stationary_lights false
+//lb_enable_sunlight false
+//lb_mixed_shadows false
+//lb_precomputed_shadowmap_enable false
+//lb_use_ellipsoid_bounds false
+//lb_use_illumination_silhouette false
+//lightquery_debug_direct_lighting false
+//lightquery_debug_indirect_lighting false
+//mat_cache_renderablepasses false
+//panorama_composition_atlas false
+//panorama_disable_render_target_cache false
+//panorama_disallow_hover_styles false
+//panorama_enable_secondary_layout_pass false
+//panorama_panel_occlusion  false
+//props_break_apply_radial_forces  false
+//pulse_save_execution_history false
+//r_arealights false
+
+
+//cloth_update    false
+//collect_asserts_for_gc false
+//debug_draw_enable false
+//enable_boneflex false
+//anim_resource_validate_on_load                  "false"
+//animgraph_enable false
+citadel_camera_use_vmdl_flatten_horizontal false
+citadel_camera_use_vmdl_flatten_vertical false
+//citadel_debug_player_speed_in_meters false
+//citadel_use_new_minimap false
+//citadel_weapon_normalize_recoil_with_firerate false
+//cl_ent_joint_lines false
+//cl_ent_joint_names false
+//cl_globallight_orig_calc_frustum false
+//cl_globallight_use_shaadow_near_offset false
+//cl_impacteffects false
+//cl_interp_ag2_for_non_ag2_entities false
+//cl_phys_animated_hierarchy false
+//cl_poll_network_early false
+//cl_show_splashes false
+//cl_skel_constraints_enable false
+//audio_enclosure_calc_enabled false
+//animated_material_attributes    false
+
+
+
         // citadel_radial_distortion                     "1" // Doesn't seem to do anything :(, here's what it's supposed to do: 0: Off 1: Distorts the visible distribution of arcs based on the mouse pointer. [def: "0"]
         // cl_fasttempentcollision                       "20"
         // citadel_camera_hard_trace_radius              "32" //put under camera tweaks :D
