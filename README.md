@@ -4,6 +4,7 @@
 ### [Instruções em Português aqui](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_portuguese.md)
 ### [Инструкции на български тук](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_bulgarian.md)
 ### [Istruzioni in italiano qui](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_italian.md)
+### [Instructions en français ici](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_french.md)
 ## Main body
 To either request support or contribute findings to the project, our Discord Server can be found [here](https://discord.gg/EF3Jq57jQv).  
 If you would like to donate as a means of showing thanks I have a kofi here! https://ko-fi.com/sqooky  

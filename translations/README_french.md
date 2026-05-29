@@ -17,6 +17,7 @@ Je vous aime tous tellement
 <div>
   <img src="https://github.com/Sqooky/OptimizationLock/blob/main/media/joy.png?raw=true" alt="Une image intitulée Sqooky's .gi — Un collage de configuration de performance visant à optimiser le jeu."/>
 </div>
+
 # Instructions de base
 Pour installer la configuration de performance, remplacez le fichier `gameinfo.gi` dans ``steamapps/common/deadlock/game/citadel`` par celui téléchargé depuis ce dépôt.
 **Un tutoriel vidéo** d'installation est disponible [ici](https://youtu.be/TbjLbQVN2kE)
