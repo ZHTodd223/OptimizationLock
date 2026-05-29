@@ -110,6 +110,7 @@ Every variation of the config included in this repository has mod support added.
 - Linaa and anartoast:              Translated to Portuguese
 - Macchiako:                        Translated to Bulgarian
 - Cyvoid:                           Translated to Italian
+- Vi:                               Translated to French
 
 ## Misc
 - Artemon121:     Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game.
